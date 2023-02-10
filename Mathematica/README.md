@@ -8,9 +8,15 @@ Until I can find a more permanent solution, you're going to have to do this ever
 
 Inside the Mathmatica desktop application, select  **File -> Install...**
 
-<img src="images/File-Install.png" width=25%>
+<img src="images/InstallPackage-File-Install.png" width=25%>
 
+<img src="images/InstallPackage-FromFile.png" width=25%>
 
+<img src="images/InstallPackage-SelectSource.png" width=25%>
+
+<img src="images/InstallPackage-SelectPackageFile.png" width=25%>
+
+<img src="images/InstallPackage-OK.png" width=25%>
 
 
 ## Load 
