@@ -5,6 +5,9 @@
  * Mathematica functions written by Charles Evans (UNC Chapel Hill).
  * Slightly extended and converted to a mathematica package 
  * by David Brown (NC State University).
+ * 2023.02.07 Bob Seaton - added ChristoffelSymbols function to 
+ *                         pretty print Christoffel Symbols results.
+ *                         credit: https://github.com/nathanaelnoir
 ********)
 
 BeginPackage["GRhelper`"]
@@ -27,7 +30,13 @@ StyleBox[\"inverse\",\nFontSlant->\"Italic\"]\)\!\(\*
 StyleBox[\" \",\nFontSlant->\"Italic\"]\)\!\(\*
 StyleBox[\"metric\",\nFontSlant->\"Italic\"]\),\!\(\*
 StyleBox[\"coordinates\",\nFontSlant->\"Italic\"]\)] = Christoffel symbols of the second kind (first index up, second and third indices down)"
-	
+
+ChristoffelSymbols::usage = "ChristoffelSymbols[\!\(\*
+StyleBox[\"metric\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\",\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\"coordinates\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\"]\",\nFontSlant->\"Italic\"]\) = Christoffel symbols of the second kind (first index up, second and third indices down)"
+
 Riemann::usage = "Riemann[\!\(\*
 StyleBox[\"metric\",\nFontSlant->\"Italic\"]\)\!\(\*
 StyleBox[\",\",\nFontSlant->\"Italic\"]\)\!\(\*
@@ -164,7 +173,7 @@ StyleBox[\"field\",\nFontSlant->\"Italic\"]\)] = Vector product of worldline tan
 GRhelper::usage = "GRhelper \!\(\*
 StyleBox[\"Main\",\nFontSlant->\"Italic\"]\)\!\(\*
 StyleBox[\" \",\nFontSlant->\"Italic\"]\)\!\(\*
-StyleBox[\"Functions\",\nFontSlant->\"Italic\"]\): InverseMetric, Affine, Riemann, RicciTensor, RicciScalar, Einstein, CovDerVector, CovDerOneForm, 
+StyleBox[\"Functions\",\nFontSlant->\"Italic\"]\): InverseMetric, ChristoffelSymbols, Affine, Riemann, RicciTensor, RicciScalar, Einstein, CovDerVector, CovDerOneForm, 
 	GradScalar, CovDerTwoTensorDownDown, Worldline, GeodesicEqns, VelocityNorm, UdotKVF
 	\!\(\*
 StyleBox[\"Other\",\nFontSlant->\"Italic\"]\)\!\(\*
@@ -176,6 +185,48 @@ StyleBox[\"Functions\",\nFontSlant->\"Italic\"]\): AffineWig, RiemannWaff, Riema
 Begin["`Private`"]
 
 InverseMetric[g_] := Block[{res}, res =Inverse[g]; Simplify[res]]
+
+ChristoffelSymbols[metric_, coord_, 
+   OptionsPattern[{
+    FontSize -> 16, 
+    FontFamily -> "American Typewriter", 
+    Header -> True}]] :=
+  Module[{inversemetric, n, list}, n = Length[coord];
+   inversemetric := Simplify[Inverse[metric]];
+   Christoffel = 
+    Simplify[
+     Table[(1/2)*
+       Sum[(inversemetric[[i, s]])*(D[metric[[s, j]], coord[[k]]] + 
+           D[metric[[s, k]], coord[[j]]] - 
+           D[metric[[j, k]], coord[[s]]]), {s, 1, n}], {i, 1, n}, {j, 
+       1, n}, {k, 1, n}]];
+   fontSize = OptionValue[FontSize];
+   fontFamily = OptionValue[FontFamily];
+   useHeader = OptionValue[Header];
+   list := Table[
+     If[UnsameQ[Christoffel[[i, j, k]], 0],
+      {
+       Text[
+        Style[\[CapitalGamma][coord[[i]], coord[[j]], coord[[k]]], 
+         Black, FontFamily -> fontFamily, FontSize -> fontSize]],
+       Text[
+        Style["=", Black, FontFamily -> fontFamily, 
+         FontSize -> fontSize]],
+       Text[
+        Style[Christoffel[[i, j, k]], Black, 
+         FontFamily -> fontFamily, FontSize -> fontSize]]
+       }
+      ],
+     {i, 1, n}, {j, 1, n}, {k, 1, j}];
+   
+   a = Style["Christoffel Symbols", FontFamily -> fontFamily, 
+     FontSize -> fontSize];
+   b = Style["Values", FontFamily -> fontFamily, FontSize -> fontSize];
+   TableForm[Partition[DeleteCases[Flatten[list], Null], 3], 
+    TableSpacing -> {2, 1} , 
+    If[SameQ[useHeader, True], TableHeadings -> {None, {a, "", b}}]
+    ]
+   ];
 
 Affine[g_,xx_]:=Block[{n,ig,res},n= Length[xx];ig=InverseMetric[g];
 res=Table[(1/2)*Sum[ig[[i,s]]*(-D[g[[j,k]],xx[[s]]]+D[g[[j,s]],xx[[k]]]+D[g[[s,k]],xx[[j]]]),{s,1,n}],{i,1,n},{j,1,n},{k,1,n}];
