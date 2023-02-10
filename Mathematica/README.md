@@ -8,7 +8,7 @@ Until I can find a more permanent solution, you're going to have to do this ever
 
 Inside the Mathmatica desktop application, select  **File -> Install...**
 
-<img src="images/File-Install.png" width=50%>
+<img src="images/File-Install.png" width=25%>
 
 
 
