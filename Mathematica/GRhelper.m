@@ -5,6 +5,7 @@
  * Mathematica functions written by Charles Evans (UNC Chapel Hill).
  * Slightly extended and converted to a mathematica package 
  * by David Brown (NC State University).
+ * 2023.02.10 Bob Seaton - Christoffel Symbol code cleanup. Added RemoveZeros option.
  * 2023.02.08 Bob Seaton - added options FontSize and FontFamily to ChristoffelSymbols function
  * 2023.02.07 Bob Seaton - added ChristoffelSymbols function to 
  *                         pretty print Christoffel Symbols results.
@@ -187,10 +188,12 @@ Begin["`Private`"]
 
 InverseMetric[g_] := Block[{res}, res =Inverse[g]; Simplify[res]]
 
-ChristoffelSymbols[metric_, coord_, 
-   OptionsPattern[{FontSize -> 16, 
-     FontFamily -> "American Typewriter", Header -> True, 
-     RemoveZeros -> True}]] := 
+ChristoffelSymbols[metric_, coord_,
+   OptionsPattern[{
+    FontSize -> 16, 
+    FontFamily -> "American Typewriter", 
+    Header -> True, 
+    RemoveZeros -> True}]] := 
   Module[{inversemetric, n, list}, n = Length[coord];
    inversemetric := Simplify[Inverse[metric]];
    Christoffel = 
@@ -206,13 +209,13 @@ ChristoffelSymbols[metric_, coord_,
    fontFamily = OptionValue[FontFamily];
    removeZeros = OptionValue[RemoveZeros];
    useHeader = OptionValue[Header];
-   
-   list :=
-    Table[
+   myGamma = SymbolName[\[CapitalGamma]];
+
+   list := Table[
      If[Christoffel[[\[Nu], \[Alpha], \[Mu]]] =!= 0 || ! removeZeros,
       {
        Text[
-        Style[\[CapitalGamma][coord[[\[Nu]]], coord[[\[Alpha]]], 
+        Style[myGamma[coord[[\[Nu]]], coord[[\[Alpha]]], 
           coord[[\[Mu]]]], Black, FontFamily -> fontFamily, 
          FontSize -> fontSize]], 
        Text[Style["=", Black, FontFamily -> fontFamily, 
@@ -229,47 +232,7 @@ ChristoffelSymbols[metric_, coord_,
     TableSpacing -> {2, 1}, 
     If[SameQ[useHeader, True], TableHeadings -> {None, {a, "", b}}]]
    ];
-ChristoffelSymbols[metric_, coord_, 
-   OptionsPattern[{
-    FontSize -> 16, 
-    FontFamily -> "American Typewriter", 
-    Header -> True}]] :=
-  Module[{inversemetric, n, list}, n = Length[coord];
-   inversemetric := Simplify[Inverse[metric]];
-   Christoffel = 
-    Simplify[
-     Table[(1/2)*
-       Sum[(inversemetric[[i, s]])*(D[metric[[s, j]], coord[[k]]] + 
-           D[metric[[s, k]], coord[[j]]] - 
-           D[metric[[j, k]], coord[[s]]]), {s, 1, n}], {i, 1, n}, {j, 
-       1, n}, {k, 1, n}]];
-   fontSize = OptionValue[FontSize];
-   fontFamily = OptionValue[FontFamily];
-   useHeader = OptionValue[Header];
-   list := Table[
-     If[UnsameQ[Christoffel[[i, j, k]], 0],
-      {
-       Text[
-        Style[\[CapitalGamma][coord[[i]], coord[[j]], coord[[k]]], 
-         Black, FontFamily -> fontFamily, FontSize -> fontSize]],
-       Text[
-        Style["=", Black, FontFamily -> fontFamily, 
-         FontSize -> fontSize]],
-       Text[
-        Style[Christoffel[[i, j, k]], Black, 
-         FontFamily -> fontFamily, FontSize -> fontSize]]
-       }
-      ],
-     {i, 1, n}, {j, 1, n}, {k, 1, j}];
-   
-   a = Style["Christoffel Symbols", FontFamily -> fontFamily, 
-     FontSize -> fontSize];
-   b = Style["Values", FontFamily -> fontFamily, FontSize -> fontSize];
-   TableForm[Partition[DeleteCases[Flatten[list], Null], 3], 
-    TableSpacing -> {2, 1} , 
-    If[SameQ[useHeader, True], TableHeadings -> {None, {a, "", b}}]
-    ]
-   ];
+
 
 Affine[g_,xx_]:=Block[{n,ig,res},n= Length[xx];ig=InverseMetric[g];
 res=Table[(1/2)*Sum[ig[[i,s]]*(-D[g[[j,k]],xx[[s]]]+D[g[[j,s]],xx[[k]]]+D[g[[s,k]],xx[[j]]]),{s,1,n}],{i,1,n},{j,1,n},{k,1,n}];

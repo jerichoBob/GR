@@ -1,0 +1,276 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10431,        268]
+NotebookOptionsPosition[      9958,        252]
+NotebookOutlinePosition[     10382,        269]
+CellTagsIndexPosition[     10339,        266]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Christoffel", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"n_", ",", " ", "g_", ",", " ", "ing_"}], "}"}], " ", 
+     RowBox[{"OptionsPattern", "[", "]"}]}], "]"}], ":=", 
+   RowBox[{"Module", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[CapitalGamma]", ",", " ", "in\[CapitalGamma]"}], "}"}], ",", 
+     
+     RowBox[{
+      RowBox[{"\[CapitalGamma]", "=", 
+       RowBox[{"in\[CapitalGamma]", " ", "=", " ", 
+        RowBox[{"Table", "[", 
+         RowBox[{"0", ",", " ", 
+          RowBox[{"{", 
+           RowBox[{"\[Lambda]", ",", "n"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"\[Mu]", ",", " ", "n"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"\[Nu]", ",", "n"}], "}"}]}], "]"}]}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Do", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"\[CapitalGamma]", "[", 
+           RowBox[{"[", 
+            RowBox[{"\[Lambda]", ",", " ", "\[Mu]", ",", " ", "\[Nu]"}], 
+            "]"}], "]"}], " ", "=", " ", 
+          RowBox[{"Simplify", "[", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"D", "[", 
+               RowBox[{
+                RowBox[{"g", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"\[Lambda]", ",", " ", "\[Nu]"}], "]"}], "]"}], ",",
+                 " ", 
+                RowBox[{"x", "[", "\[Mu]", "]"}]}], "]"}], "+", 
+              RowBox[{"D", "[", 
+               RowBox[{
+                RowBox[{"g", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"\[Lambda]", ",", " ", "\[Mu]"}], "]"}], "]"}], ",",
+                 " ", 
+                RowBox[{"x", "[", "\[Nu]", "]"}]}], "]"}], "-", 
+              RowBox[{"D", "[", 
+               RowBox[{
+                RowBox[{"g", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"\[Mu]", ",", " ", "\[Nu]"}], "]"}], "]"}], ",", 
+                " ", 
+                RowBox[{"x", "[", "\[Lambda]", "]"}]}], "]"}]}], ")"}], "/", 
+            "2"}], "]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"\[Mu]", " ", "!=", " ", "\[Nu]"}], ",", " ", 
+           RowBox[{
+            RowBox[{"\[CapitalGamma]", "[", 
+             RowBox[{"[", 
+              RowBox[{"\[Lambda]", ",", " ", "\[Nu]", ",", "\[Mu]"}], "]"}], 
+             "]"}], " ", "=", " ", 
+            RowBox[{"\[CapitalGamma]", "[", 
+             RowBox[{"[", 
+              RowBox[{"\[Lambda]", ",", " ", "\[Mu]", ",", "\[Nu]"}], "]"}], 
+             "]"}]}]}], "]"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"\[Lambda]", ",", "n"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"\[Mu]", ",", "n"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"\[Nu]", ",", "\[Mu]"}], "}"}]}], "\[IndentingNewLine]", 
+       "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Do", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"in\[CapitalGamma]", "[", 
+           RowBox[{"[", 
+            RowBox[{"\[Lambda]", ",", " ", "\[Mu]", ",", " ", "\[Nu]"}], 
+            "]"}], "]"}], " ", "=", " ", 
+          RowBox[{"Simplify", "[", 
+           RowBox[{"Sum", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"ing", "[", 
+               RowBox[{"[", 
+                RowBox[{"\[Lambda]", ",", " ", "\[Rho]"}], "]"}], "]"}], 
+              RowBox[{"\[CapitalGamma]", "[", 
+               RowBox[{"[", 
+                RowBox[{"\[Rho]", ",", " ", "\[Mu]", ",", " ", "\[Nu]"}], 
+                "]"}], "]"}]}], ",", 
+             RowBox[{"{", 
+              RowBox[{"\[Rho]", ",", "n"}], "}"}]}], "]"}], "]"}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"\[Mu]", "!=", "\[Nu]"}], ",", 
+           RowBox[{
+            RowBox[{"in\[CapitalGamma]", "[", 
+             RowBox[{"[", 
+              RowBox[{"\[Lambda]", ",", " ", "\[Nu]", ",", " ", "\[Mu]"}], 
+              "]"}], "]"}], "=", 
+            RowBox[{"in\[CapitalGamma]", "[", 
+             RowBox[{"[", 
+              RowBox[{"\[Lambda]", ",", " ", "\[Mu]", ",", " ", "\[Nu]"}], 
+              "]"}], "]"}]}]}], "]"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"\[Lambda]", ",", "n"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"\[Mu]", ",", "n"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"\[Nu]", ",", "\[Mu]"}], "}"}]}], "\[IndentingNewLine]", 
+       "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"OptionValue", "[", "PrintNonZero", "]"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Do", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"\[CapitalGamma]", "[", 
+               RowBox[{"[", 
+                RowBox[{"\[Lambda]", ",", " ", "\[Mu]", ",", " ", "\[Nu]"}], 
+                "]"}], "]"}], "=!=", "0"}], ",", 
+             RowBox[{"Print", "[", 
+              RowBox[{
+               RowBox[{"\"\<\[CapitalGamma]\>\"", 
+                RowBox[{"Grid", "[", 
+                 RowBox[{"{", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"\[Lambda]", "-", "1"}], ",", 
+                    RowBox[{"\[Mu]", "-", "1"}], ",", 
+                    RowBox[{"\[Nu]", "-", "1"}]}], "}"}], "}"}], "]"}]}], 
+               ",", "\"\< \>\"", ",", " ", 
+               RowBox[{"\[CapitalGamma]", "[", 
+                RowBox[{"[", 
+                 RowBox[{"\[Lambda]", ",", " ", "\[Mu]", ",", " ", "\[Nu]"}], 
+                 "]"}], "]"}]}], "]"}]}], "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{"\[Lambda]", ",", "n"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"\[Mu]", ",", "n"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"\[Nu]", ",", "\[Mu]"}], "}"}]}], "]"}], ";", " ", 
+         RowBox[{"Do", "[", 
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"in\[CapitalGamma]", "[", 
+               RowBox[{"[", 
+                RowBox[{"\[Lambda]", ",", " ", "\[Mu]", ",", " ", "\[Nu]"}], 
+                "]"}], "]"}], "=!=", "0"}], ",", "\[IndentingNewLine]", 
+             RowBox[{"Print", "[", 
+              RowBox[{
+               RowBox[{"\"\<\[CapitalGamma]\>\"", 
+                RowBox[{"Grid", "[", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{"\[Lambda]", "-", "1"}], "}"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{"\"\<\>\"", ",", 
+                    RowBox[{"\[Mu]", "-", "1"}], ",", 
+                    RowBox[{"\[Nu]", "-", "1"}]}], "}"}]}], "]"}]}], ",", 
+               "\"\< \>\"", ",", 
+               RowBox[{"in\[CapitalGamma]", "[", 
+                RowBox[{"[", 
+                 RowBox[{"\[Lambda]", ",", " ", "\[Mu]", ",", " ", "\[Nu]"}], 
+                 "]"}], "]"}]}], "]"}]}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"\[Lambda]", ",", "n"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"\[Mu]", ",", "n"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"\[Nu]", ",", "\[Mu]"}], "}"}]}], "\[IndentingNewLine]", 
+          "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"\[CapitalGamma]", ",", " ", "in\[CapitalGamma]"}], "}"}]}]}], 
+    "]"}]}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.8849900128849363`*^9, 3.8849900128878736`*^9}, {
+   3.884990063399588*^9, 3.884990067498127*^9}, {3.884990105622067*^9, 
+   3.884990462684803*^9}, {3.88499053622075*^9, 3.884990758860929*^9}, {
+   3.8849911097034683`*^9, 3.884991147665722*^9}, {3.8849911844827423`*^9, 
+   3.884991222507554*^9}, {3.8849912949578037`*^9, 3.884991543458145*^9}, {
+   3.88499159803261*^9, 3.8849918505127974`*^9}, {3.8849919727778873`*^9, 
+   3.8849922080960903`*^9}, {3.884992242976617*^9, 3.8849923178436728`*^9}, 
+   3.88499237320605*^9, {3.884992453749138*^9, 3.884992463777833*^9}, {
+   3.884992523205514*^9, 3.884992528957387*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"0f39185e-4188-4e33-a732-0cf317bd7d7e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Christoffel", "[", "\n", 
+   RowBox[{"Metric", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1", "-", 
+        RowBox[{"1", "/", "r"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", 
+        RowBox[{
+         RowBox[{"-", "1"}], "/", 
+         RowBox[{"(", 
+          RowBox[{"1", "-", 
+           RowBox[{"1", "/", "r"}]}], ")"}]}]}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", 
+        RowBox[{"-", 
+         RowBox[{"r", "^", "2"}]}]}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "0", ",", 
+        RowBox[{
+         RowBox[{"-", 
+          RowBox[{"r", "^", "2"}]}], 
+         RowBox[{
+          RowBox[{"Sin", "[", "\[Theta]", "]"}], "^", "2"}]}]}], "}"}]}], 
+     "}"}], "]"}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.884992550457925*^9, 3.88499277003417*^9}, {
+  3.884992864102681*^9, 3.8849928653796062`*^9}},
+ CellLabel->"In[26]:=",ExpressionUUID->"4d9b9126-d863-47e5-9ad2-accdb9343538"]
+},
+WindowSize->{1254, 879},
+WindowMargins->{{Automatic, 72}, {Automatic, 0}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"13.1 for Mac OS X ARM (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"f3d1eb80-27b8-4488-bcdd-52ddb285dd14"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 8354, 198, 592, "Input",ExpressionUUID->"0f39185e-4188-4e33-a732-0cf317bd7d7e"],
+Cell[8915, 220, 1039, 30, 80, "Input",ExpressionUUID->"4d9b9126-d863-47e5-9ad2-accdb9343538"]
+}
+]
+*)
+
