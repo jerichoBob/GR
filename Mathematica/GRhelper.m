@@ -5,6 +5,7 @@
  * Mathematica functions written by Charles Evans (UNC Chapel Hill).
  * Slightly extended and converted to a mathematica package 
  * by David Brown (NC State University).
+ * 2023.02.08 Bob Seaton - added options FontSize and FontFamily to ChristoffelSymbols function
  * 2023.02.07 Bob Seaton - added ChristoffelSymbols function to 
  *                         pretty print Christoffel Symbols results.
  *                         credit: https://github.com/nathanaelnoir
