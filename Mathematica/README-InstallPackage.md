@@ -1,10 +1,6 @@
-# GRHelper Usage
+# Installing the GRHelper package
 
-Inside the Mathmatica Desktop app, locate and open the usingChristoffelSymbols.nb file. It has some examples you can play with. But before you can use that file, you'll need to [install the GRHelper package](README-InstallPackage.md).
-
-## Install GRHelper package into Mathematica
-
-Until I can find a more permanent solution, you're going to have to do this every time you start up Mathematica AND you want to use this package.
+Until I can find a more permanent solution, you're going to have to do this every time you start up Mathematica AND want to use functionality from this package.
 
 Inside the Mathematica desktop application, select  **File -> Install...**
 
