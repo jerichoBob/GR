@@ -188,6 +188,48 @@ Begin["`Private`"]
 InverseMetric[g_] := Block[{res}, res =Inverse[g]; Simplify[res]]
 
 ChristoffelSymbols[metric_, coord_, 
+   OptionsPattern[{FontSize -> 16, 
+     FontFamily -> "American Typewriter", Header -> True, 
+     RemoveZeros -> True}]] := 
+  Module[{inversemetric, n, list}, n = Length[coord];
+   inversemetric := Simplify[Inverse[metric]];
+   Christoffel = 
+    Simplify[Table[(1/2)*Sum[(inversemetric[[\[Alpha], \[Beta]]])*(
+          D[metric[[\[Nu], \[Beta]]], coord[[\[Mu]]]] +
+           D[metric[[\[Mu], \[Beta]]], coord[[\[Nu]]]] -
+           D[metric[[\[Mu], \[Nu]]], coord[[\[Beta]]]]), {\[Beta], 1, 
+         n}],
+      {\[Alpha], 1, n}, {\[Mu], 1, n}, {\[Nu], 1, n}]];
+   
+   (* handling options *)
+   fontSize = OptionValue[FontSize];
+   fontFamily = OptionValue[FontFamily];
+   removeZeros = OptionValue[RemoveZeros];
+   useHeader = OptionValue[Header];
+   
+   list :=
+    Table[
+     If[Christoffel[[\[Nu], \[Alpha], \[Mu]]] =!= 0 || ! removeZeros,
+      {
+       Text[
+        Style[\[CapitalGamma][coord[[\[Nu]]], coord[[\[Alpha]]], 
+          coord[[\[Mu]]]], Black, FontFamily -> fontFamily, 
+         FontSize -> fontSize]], 
+       Text[Style["=", Black, FontFamily -> fontFamily, 
+         FontSize -> fontSize]], 
+       Text[Style[Christoffel[[\[Nu], \[Alpha], \[Mu]]], Black, 
+         FontFamily -> fontFamily, FontSize -> fontSize]]
+       }
+      ], {\[Nu], 1, n}, {\[Alpha], 1, n}, {\[Mu], 1, n}];
+   
+   a = Style["Christoffel Symbols", FontFamily -> fontFamily, 
+     FontSize -> fontSize];
+   b = Style["Values", FontFamily -> fontFamily, FontSize -> fontSize];
+   TableForm[Partition[DeleteCases[Flatten[list], Null], 3], 
+    TableSpacing -> {2, 1}, 
+    If[SameQ[useHeader, True], TableHeadings -> {None, {a, "", b}}]]
+   ];
+ChristoffelSymbols[metric_, coord_, 
    OptionsPattern[{
     FontSize -> 16, 
     FontFamily -> "American Typewriter", 
