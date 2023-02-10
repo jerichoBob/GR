@@ -1,6 +1,10 @@
 # GRHelper
 
-The GRHelper package was written by David Brown from a collection of Mathematica functions he got from Chuck Evans @ UNC Chapel Hill.
+The Mathematica functions within the GRHelper package were originally written by Chuck Evans (and some of his grad students) @ UNC Chapel Hill. 
+
+David Brown @ NC State created the GRHelper package and tidied things up and put those functions into the package form you see here. 
+
+Bob Seaton @ NC State wanted a prettier output for the Christoffel Symbols, so he added that function and checked it into github.
 ## Usage
 
 Inside the Mathematica Desktop app, locate and open the usingChristoffelSymbols.nb file (open it inside Mathematica!). It has examples you can play with. But before you can use that file, you'll need to [install the GRHelper package](README-InstallPackage.md).
