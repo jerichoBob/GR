@@ -190,39 +190,58 @@ Begin["`Private`"]
 InverseMetric[g_] := Block[{res}, res =Inverse[g]; Simplify[res]]
 
 ChristoffelSymbols[metric_, coord_,
-   OptionsPattern[{FontSize -> 16, 
-     FontFamily -> "American Typewriter", Header -> True, 
-     RemoveZeros -> True}]] := 
+  OptionsPattern[{FontSize -> 16, FontFamily -> "American Typewriter", 
+     Header -> True, RemoveZeros -> True}]] := 
   Module[{inversemetric, n, list}, n = Length[coord];
    inversemetric := Simplify[Inverse[metric]];
-   Christoffel = 
-    Simplify[Table[(1/2)*Sum[(inversemetric[[\[Alpha], \[Beta]]])*(
-          D[metric[[\[Nu], \[Beta]]], coord[[\[Mu]]]] +
-           D[metric[[\[Mu], \[Beta]]], coord[[\[Nu]]]] -
-           D[metric[[\[Mu], \[Nu]]], coord[[\[Beta]]]]), {\[Beta], 1, 
-         n}],
-      {\[Nu], 1, n}, {\[Alpha], 1, n}, {\[Mu], 1, n}]];
+   (*Christoffel=Simplify[Table[(1/2)*
+   Sum[(inversemetric[[\[Alpha],\[Beta]]])*(
+   D[metric[[\[Nu],\[Beta]]],coord[[\[Mu]]]]+
+   D[metric[[\[Mu], \[Beta]]],coord[[\[Nu]]]]-
+   D[metric[[\[Mu],\[Nu]]],coord[[\[Beta]]]]),{\[Beta],1,n}],
+   {\[Nu],1,n},{\[Alpha],1,n},{\[Mu],1,n}]];*)
    
+   (* Using Sean Carrol's Christoffel Equation p.93 *)
+   Christoffel = 
+    Simplify[Table[(1/2)*Sum[(inversemetric[[\[Lambda], \[Sigma]]])*(
+          D[metric[[\[Nu], \[Sigma]]], coord[[\[Mu]]]] +
+           D[metric[[\[Sigma], \[Mu]]], coord[[\[Nu]]]] -
+           D[metric[[\[Mu], \[Nu]]], coord[[\[Sigma]]]]), {\[Sigma], 
+         1, n}],
+      {\[Lambda], 1, n}, {\[Mu], 1, n}, {\[Nu], 1, n}]];
    (* handling options *)
    fontSize = OptionValue[FontSize];
    fontFamily = OptionValue[FontFamily];
    removeZeros = OptionValue[RemoveZeros];
    useHeader = OptionValue[Header];
    myGamma = SymbolName[\[CapitalGamma]];
-
+   
+   (*list:=Table[
+   If[Christoffel[[\[Nu],\[Alpha],\[Mu]]]=!=0 ||!removeZeros,
+   {
+   Text[Style[\[CapitalGamma][coord[[\[Nu]]],coord[[\[Alpha]]],
+   coord[[\[Mu]]]],Black,FontFamily->fontFamily,FontSize->fontSize]],
+   Text[Style["=",Black,FontFamily->fontFamily,FontSize->fontSize]],
+   Text[Style[Christoffel[[\[Nu],\[Alpha],\[Mu]]],Black,FontFamily->
+   fontFamily,FontSize->fontSize]]
+   }
+   ],{\[Nu],1,n},{\[Alpha],1,n},{\[Mu],1,n}];
+   *)
+   (* Using Sean Carrol's Christoffel Equation p.93 *)
    list := Table[
-     If[Christoffel[[\[Nu], \[Alpha], \[Mu]]] =!= 0 || ! removeZeros,
+     If[Christoffel[[\[Lambda], \[Mu], \[Nu]]] =!= 0 || ! 
+        removeZeros,
       {
        Text[
-        Style[myGamma[coord[[\[Nu]]], coord[[\[Alpha]]], 
-          coord[[\[Mu]]]], Black, FontFamily -> fontFamily, 
+        Style[myGamma[coord[[\[Lambda]]], coord[[\[Mu]]], 
+          coord[[\[Nu]]]], Black, FontFamily -> fontFamily, 
          FontSize -> fontSize]], 
        Text[Style["=", Black, FontFamily -> fontFamily, 
          FontSize -> fontSize]], 
-       Text[Style[Christoffel[[\[Nu], \[Alpha], \[Mu]]], Black, 
+       Text[Style[Christoffel[[\[Lambda], \[Mu], \[Nu]]], Black, 
          FontFamily -> fontFamily, FontSize -> fontSize]]
        }
-      ], {\[Nu], 1, n}, {\[Alpha], 1, n}, {\[Mu], 1, n}];
+      ], {\[Lambda], 1, n}, {\[Mu], 1, n}, {\[Nu], 1, n}];
    
    a = Style["Christoffel Symbols", FontFamily -> fontFamily, 
      FontSize -> fontSize];
@@ -231,6 +250,7 @@ ChristoffelSymbols[metric_, coord_,
     TableSpacing -> {2, 1}, 
     If[SameQ[useHeader, True], TableHeadings -> {None, {a, "", b}}]]
    ];
+   
 
 Affine[g_,xx_]:=Block[{n,ig,res},n= Length[xx];ig=InverseMetric[g];
 res=Table[(1/2)*Sum[ig[[i,s]]*(-D[g[[j,k]],xx[[s]]]+D[g[[j,s]],xx[[k]]]+D[g[[s,k]],xx[[j]]]),{s,1,n}],{i,1,n},{j,1,n},{k,1,n}];
