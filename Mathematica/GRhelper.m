@@ -194,12 +194,6 @@ ChristoffelSymbols[metric_, coord_,
      Header -> True, RemoveZeros -> True}]] := 
   Module[{inversemetric, n, list}, n = Length[coord];
    inversemetric := Simplify[Inverse[metric]];
-   (*Christoffel=Simplify[Table[(1/2)*
-   Sum[(inversemetric[[\[Alpha],\[Beta]]])*(
-   D[metric[[\[Nu],\[Beta]]],coord[[\[Mu]]]]+
-   D[metric[[\[Mu], \[Beta]]],coord[[\[Nu]]]]-
-   D[metric[[\[Mu],\[Nu]]],coord[[\[Beta]]]]),{\[Beta],1,n}],
-   {\[Nu],1,n},{\[Alpha],1,n},{\[Mu],1,n}]];*)
    
    (* Using Sean Carrol's Christoffel Equation p.93 *)
    Christoffel = 
@@ -216,17 +210,6 @@ ChristoffelSymbols[metric_, coord_,
    useHeader = OptionValue[Header];
    myGamma = SymbolName[\[CapitalGamma]];
    
-   (*list:=Table[
-   If[Christoffel[[\[Nu],\[Alpha],\[Mu]]]=!=0 ||!removeZeros,
-   {
-   Text[Style[\[CapitalGamma][coord[[\[Nu]]],coord[[\[Alpha]]],
-   coord[[\[Mu]]]],Black,FontFamily->fontFamily,FontSize->fontSize]],
-   Text[Style["=",Black,FontFamily->fontFamily,FontSize->fontSize]],
-   Text[Style[Christoffel[[\[Nu],\[Alpha],\[Mu]]],Black,FontFamily->
-   fontFamily,FontSize->fontSize]]
-   }
-   ],{\[Nu],1,n},{\[Alpha],1,n},{\[Mu],1,n}];
-   *)
    (* Using Sean Carrol's Christoffel Equation p.93 *)
    list := Table[
      If[Christoffel[[\[Lambda], \[Mu], \[Nu]]] =!= 0 || ! 
@@ -251,6 +234,43 @@ ChristoffelSymbols[metric_, coord_,
     If[SameQ[useHeader, True], TableHeadings -> {None, {a, "", b}}]]
    ];
    
+PrettyCS[cslist_, 
+   OptionsPattern[{FontSize -> 16, 
+     FontFamily -> "American Typewriter", UseSymmetry -> True}]
+   ] := 
+  Block[{n, fontSize, fontFamily, useHeader},
+   (* assuming cslist is of the form [\[Lambda],\[Mu],\[Nu]] *)
+   n = CubeRoot[Length[Flatten[cslist]]]; (*dimensionlity of list*)
+   (*Options Handling*)
+   fontSize = OptionValue[FontSize];
+   fontFamily = OptionValue[FontFamily];
+   useSymmetry = OptionValue[UseSymmetry];
+   (*misc Variables *)
+   supersubsize = fontSize *.75;
+   gammasize = fontSize * 1.25;
+   myGamma = SymbolName[\[CapitalGamma]];
+   list :=
+    Table[If[cslist[[\[Lambda], \[Mu], \[Nu]]] =!= 0,
+      {
+       upper = 
+        Style[ToString[\[Lambda]], Black, FontFamily -> fontFamily, 
+         FontSize -> supersubsize ];
+       lower = 
+        Style[StringJoin[ ToString[\[Mu]] , ToString[\[Nu]]], Black, 
+         FontFamily -> fontFamily, FontSize -> supersubsize];
+       Text[
+        Style[Subsuperscript[myGamma, lower, upper], Black, 
+         FontFamily -> fontFamily, FontSize -> gammasize]],
+       Text[
+        Style["=", Black, FontFamily -> fontFamily, 
+         FontSize -> gammasize]], 
+       Text[Style[cslist[[\[Lambda], \[Mu], \[Nu]]], Black, 
+         FontFamily -> fontFamily, FontSize -> fontSize]]
+       }], {\[Lambda], 1, n}, {\[Mu], 1, n}, {\[Nu], 1, 
+      If[useSymmetry, \[Mu], n]}];
+   TableForm[Partition[DeleteCases[Flatten[list], Null], 3], 
+    TableSpacing -> {2, 1}
+    ]];
 
 Affine[g_,xx_]:=Block[{n,ig,res},n= Length[xx];ig=InverseMetric[g];
 res=Table[(1/2)*Sum[ig[[i,s]]*(-D[g[[j,k]],xx[[s]]]+D[g[[j,s]],xx[[k]]]+D[g[[s,k]],xx[[j]]]),{s,1,n}],{i,1,n},{j,1,n},{k,1,n}];

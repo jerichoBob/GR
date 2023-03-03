@@ -1,0 +1,73 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1907,         65]
+NotebookOptionsPosition[      1310,         45]
+NotebookOutlinePosition[      1708,         61]
+CellTagsIndexPosition[      1665,         58]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"<<", "GRHelper`"}]], "Input",
+ CellChangeTimes->{{3.886854043027779*^9, 3.886854053580986*^9}},
+ CellLabel->
+  "In[159]:=",ExpressionUUID->"927f5d3c-8210-4244-ad6e-ec971619f160"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"Enter ?GRhelper for a list of functions\"\>"], "Print",
+ CellChangeTimes->{3.88685405410246*^9},
+ CellLabel->
+  "During evaluation of \
+In[159]:=",ExpressionUUID->"eab461e1-775d-4928-81be-05358d61d9a0"],
+
+Cell[BoxData["\<\"Enter ?FunctionName for a description of the function \
+'FunctionName'\"\>"], "Print",
+ CellChangeTimes->{3.886854054105998*^9},
+ CellLabel->
+  "During evaluation of \
+In[159]:=",ExpressionUUID->"642293f0-33e7-4d4b-8ce2-34a8d0e364d0"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 911},
+WindowMargins->{{-1847, Automatic}, {Automatic, -511}},
+FrontEndVersion->"13.1 for Mac OS X ARM (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"8c748e8a-2023-441d-bbe6-6d2ce1221b21"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 202, 4, 37, "Input",ExpressionUUID->"927f5d3c-8210-4244-ad6e-ec971619f160"],
+Cell[CellGroupData[{
+Cell[807, 30, 220, 4, 29, "Print",ExpressionUUID->"eab461e1-775d-4928-81be-05358d61d9a0"],
+Cell[1030, 36, 252, 5, 29, "Print",ExpressionUUID->"642293f0-33e7-4d4b-8ce2-34a8d0e364d0"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
