@@ -40,6 +40,12 @@ StyleBox[\",\",\nFontSlant->\"Italic\"]\)\!\(\*
 StyleBox[\"coordinates\",\nFontSlant->\"Italic\"]\)\!\(\*
 StyleBox[\"]\",\nFontSlant->\"Italic\"]\) = Christoffel symbols of the second kind (first index up, second and third indices down)"
 
+PrettyCS::usage = "PrettyCS[\!\(\*
+StyleBox[\"metric\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\",\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\"coordinates\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\"]\",\nFontSlant->\"Italic\"]\) = Prints out the Christoffel Symbols of the second kind in a visually recognizable way"
+
 Riemann::usage = "Riemann[\!\(\*
 StyleBox[\"metric\",\nFontSlant->\"Italic\"]\)\!\(\*
 StyleBox[\",\",\nFontSlant->\"Italic\"]\)\!\(\*
@@ -234,29 +240,50 @@ ChristoffelSymbols[metric_, coord_,
     If[SameQ[useHeader, True], TableHeadings -> {None, {a, "", b}}]]
    ];
    
-PrettyCS[cslist_, 
+PrettyCS[ARGcslist_, 
    OptionsPattern[{FontSize -> 16, 
-     FontFamily -> "American Typewriter", UseSymmetry -> True}]
+     FontFamily -> "American Typewriter", UseSymmetry -> True, 
+     Coords -> {}}]
    ] := 
-  Block[{n, fontSize, fontFamily, useHeader},
-   (* assuming cslist is of the form [\[Lambda],\[Mu],\[Nu]] *)
-   n = CubeRoot[Length[Flatten[cslist]]]; (*dimensionlity of list*)
+  Block[{n, m, ARGcoord, fontSize, fontFamily, useHeader},
    (*Options Handling*)
+   ARGcoord = OptionValue[Coords];
    fontSize = OptionValue[FontSize];
    fontFamily = OptionValue[FontFamily];
    useSymmetry = OptionValue[UseSymmetry];
+   
+   (* assuming cslist is of the form [\[Lambda], \[Mu], \[Nu]] *)
+   n = CubeRoot[Length[Flatten[ARGcslist]]] ;(*dimensionlity of list*)
+   m = Length[ARGcoord];
+   If[m != n, {
+     (*Print["Error! Dimensionallity of Christoffel Symbol list [", 
+     n, "] doesn't match the number of coordinates passed in [",m, 
+     "]... please fix it !"];
+     *)
+     ARGcoord = 
+       Take[{
+          SymbolName[\[Alpha]], 
+          SymbolName[\[Beta]], 
+          SymbolName[\[Gamma]], 
+          SymbolName[\[Delta]], 
+          SymbolName[\[Mu]], 
+          SymbolName[\[Nu]]
+        }, 
+        n];
+     }];
    (*misc Variables *)
    supersubsize = fontSize *.75;
    gammasize = fontSize * 1.25;
    myGamma = SymbolName[\[CapitalGamma]];
    list :=
-    Table[If[cslist[[\[Lambda], \[Mu], \[Nu]]] =!= 0,
+    Table[If[ARGcslist[[\[Lambda], \[Mu], \[Nu]]] =!= 0,
       {
        upper = 
-        Style[ToString[\[Lambda]], Black, FontFamily -> fontFamily, 
-         FontSize -> supersubsize ];
+        Style[ToString[ARGcoord[[\[Lambda]]]], Black, 
+         FontFamily -> fontFamily, FontSize -> supersubsize ];
        lower = 
-        Style[StringJoin[ ToString[\[Mu]] , ToString[\[Nu]]], Black, 
+        Style[StringJoin[ "  ", ToString[ARGcoord[[\[Mu]]]] , "", 
+          ToString[ARGcoord[[\[Nu]]]]], Black, 
          FontFamily -> fontFamily, FontSize -> supersubsize];
        Text[
         Style[Subsuperscript[myGamma, lower, upper], Black, 
@@ -264,7 +291,7 @@ PrettyCS[cslist_,
        Text[
         Style["=", Black, FontFamily -> fontFamily, 
          FontSize -> gammasize]], 
-       Text[Style[cslist[[\[Lambda], \[Mu], \[Nu]]], Black, 
+       Text[Style[ARGcslist[[\[Lambda], \[Mu], \[Nu]]], Black, 
          FontFamily -> fontFamily, FontSize -> fontSize]]
        }], {\[Lambda], 1, n}, {\[Mu], 1, n}, {\[Nu], 1, 
       If[useSymmetry, \[Mu], n]}];
