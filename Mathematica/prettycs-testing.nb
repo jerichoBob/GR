@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      1907,         65]
-NotebookOptionsPosition[      1310,         45]
-NotebookOutlinePosition[      1708,         61]
-CellTagsIndexPosition[      1665,         58]
+NotebookDataLength[     33918,        935]
+NotebookOptionsPosition[     32237,        897]
+NotebookOutlinePosition[     32635,        913]
+CellTagsIndexPosition[     32592,        910]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -41,10 +41,862 @@ Cell[BoxData["\<\"Enter ?FunctionName for a description of the function \
   "During evaluation of \
 In[159]:=",ExpressionUUID->"642293f0-33e7-4d4b-8ce2-34a8d0e364d0"]
 }, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"CS1", " ", ":=", " ", 
+  RowBox[{"Affine", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", " ", 
+        RowBox[{"r", "^", "2"}], ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", 
+        RowBox[{
+         RowBox[{"r", "^", "2"}], "*", 
+         RowBox[{
+          RowBox[{"Sin", "[", "\[Theta]", "]"}], "^", "2"}]}]}], "}"}]}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"r", ",", "\[Theta]", ",", " ", "\[Phi]"}], "}"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{3.8868540824314127`*^9},
+ CellLabel->
+  "In[161]:=",ExpressionUUID->"0f11a2f1-8494-492f-a29c-ea02aa28c3b3"],
+
+Cell[BoxData[
+ RowBox[{"CS1", " ", "//", "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.886854086186895*^9, 3.886854090894689*^9}},
+ CellLabel->
+  "In[162]:=",ExpressionUUID->"f5cecc9c-8195-461d-8465-76f4a4aa7389"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CS1", " ", "//", " ", "PrettyCS"}]], "Input",
+ CellChangeTimes->{{3.886854106303615*^9, 3.886854111518627*^9}},
+ CellLabel->
+  "In[163]:=",ExpressionUUID->"f1ec0f98-7ed3-40ef-b5f3-7528ffe3ac6c"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         TemplateBox[{"\"\[CapitalGamma]\"", 
+           StyleBox["\"22\"", 
+            GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+            12., StripOnInput -> False], 
+           StyleBox["\"1\"", 
+            GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+            12., StripOnInput -> False]},
+          "Subsuperscript"],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->20.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "667593ef-a3a4-4e1d-8d6c-232a857ae00a"],
+      Text[
+       Style[
+        Subsuperscript["\[CapitalGamma]", 
+         Style["22", 
+          GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 12.], 
+         Style["1", 
+          GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+          12.]], 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 20.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox["\<\"=\"\>",
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->20.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "3e892a5a-351e-4f87-9259-fe69803dc6eb"],
+      Text[
+       Style["=", 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 20.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         RowBox[{"-", "r"}],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->16,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "eabc1d4b-c7ed-41ca-a45b-4345f460d636"],
+      Text[
+       Style[-$CellContext`r, 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+        16]]]},
+    {
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         TemplateBox[{"\"\[CapitalGamma]\"", 
+           StyleBox["\"33\"", 
+            GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+            12., StripOnInput -> False], 
+           StyleBox["\"1\"", 
+            GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+            12., StripOnInput -> False]},
+          "Subsuperscript"],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->20.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "f509f185-3058-4446-97f4-73cb7f8bf265"],
+      Text[
+       Style[
+        Subsuperscript["\[CapitalGamma]", 
+         Style["33", 
+          GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 12.], 
+         Style["1", 
+          GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+          12.]], 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 20.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox["\<\"=\"\>",
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->20.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "7d652d3a-8079-46a9-8325-bf100dd80064"],
+      Text[
+       Style["=", 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 20.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         RowBox[{
+          RowBox[{"-", "r"}], " ", 
+          SuperscriptBox[
+           RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"]}],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->16,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "cb53e26b-ee74-4718-b945-69adc10f3339"],
+      Text[
+       Style[-$CellContext`r Sin[$CellContext`\[Theta]]^2, 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+        16]]]},
+    {
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         TemplateBox[{"\"\[CapitalGamma]\"", 
+           StyleBox["\"21\"", 
+            GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+            12., StripOnInput -> False], 
+           StyleBox["\"2\"", 
+            GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+            12., StripOnInput -> False]},
+          "Subsuperscript"],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->20.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "bd32075f-2079-47e0-936e-051b58f66c3b"],
+      Text[
+       Style[
+        Subsuperscript["\[CapitalGamma]", 
+         Style["21", 
+          GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 12.], 
+         Style["2", 
+          GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+          12.]], 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 20.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox["\<\"=\"\>",
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->20.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "3380dc1d-e2f7-4bc2-aa45-cda5ae7d531c"],
+      Text[
+       Style["=", 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 20.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         FractionBox["1", "r"],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->16,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "82811f8c-ab77-4917-b4e8-08644fa0b8ad"],
+      Text[
+       Style[$CellContext`r^(-1), 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+        16]]]},
+    {
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         TemplateBox[{"\"\[CapitalGamma]\"", 
+           StyleBox["\"33\"", 
+            GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+            12., StripOnInput -> False], 
+           StyleBox["\"2\"", 
+            GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+            12., StripOnInput -> False]},
+          "Subsuperscript"],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->20.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "eb50e077-c8bb-49eb-a73e-8f6ba62b57c1"],
+      Text[
+       Style[
+        Subsuperscript["\[CapitalGamma]", 
+         Style["33", 
+          GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 12.], 
+         Style["2", 
+          GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+          12.]], 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 20.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox["\<\"=\"\>",
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->20.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "6df52291-3305-4a6c-b8c9-5958590670d7"],
+      Text[
+       Style["=", 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 20.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         RowBox[{
+          RowBox[{"-", 
+           RowBox[{"Cos", "[", "\[Theta]", "]"}]}], " ", 
+          RowBox[{"Sin", "[", "\[Theta]", "]"}]}],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->16,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "c0c1e02d-9888-41d0-9fc8-3d13495d414b"],
+      Text[
+       Style[-Cos[$CellContext`\[Theta]] Sin[$CellContext`\[Theta]], 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+        16]]]},
+    {
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         TemplateBox[{"\"\[CapitalGamma]\"", 
+           StyleBox["\"31\"", 
+            GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+            12., StripOnInput -> False], 
+           StyleBox["\"3\"", 
+            GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+            12., StripOnInput -> False]},
+          "Subsuperscript"],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->20.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "3ef850a7-fbf2-4508-bf4b-a12bcb21db11"],
+      Text[
+       Style[
+        Subsuperscript["\[CapitalGamma]", 
+         Style["31", 
+          GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 12.], 
+         Style["3", 
+          GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+          12.]], 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 20.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox["\<\"=\"\>",
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->20.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "81ca3687-2f31-4ec6-9df3-89f9b088aed7"],
+      Text[
+       Style["=", 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 20.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         FractionBox["1", "r"],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->16,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "2ae5933e-e065-405f-b171-e50e9ef76da0"],
+      Text[
+       Style[$CellContext`r^(-1), 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+        16]]]},
+    {
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         TemplateBox[{"\"\[CapitalGamma]\"", 
+           StyleBox["\"32\"", 
+            GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+            12., StripOnInput -> False], 
+           StyleBox["\"3\"", 
+            GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+            12., StripOnInput -> False]},
+          "Subsuperscript"],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->20.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "142f5128-59b9-4074-9f31-6ca9afa63c13"],
+      Text[
+       Style[
+        Subsuperscript["\[CapitalGamma]", 
+         Style["32", 
+          GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 12.], 
+         Style["3", 
+          GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+          12.]], 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 20.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox["\<\"=\"\>",
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->20.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "db20ff7c-c30e-43d6-aca3-b1977f5e0c9a"],
+      Text[
+       Style["=", 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 20.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         RowBox[{"Cot", "[", "\[Theta]", "]"}],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->16,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "d4c9d207-ea18-4cbe-8aa5-10592172d17f"],
+      Text[
+       Style[
+        Cot[$CellContext`\[Theta]], 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 16]]]}
+   },
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[0.7]}, 
+       Offset[0.27999999999999997`]}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.8]}, 
+       Offset[0.2]}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$, TableSpacing -> {2, 1}]]]], "Output",
+ CellChangeTimes->{3.886854112429625*^9},
+ CellLabel->
+  "Out[163]//TableForm=",ExpressionUUID->"deb02085-a4ac-4bb2-b03c-\
+d18dd1395926"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CS2", " ", "=", " ", 
+  RowBox[{"Affine", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", "0"}], " ", "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", 
+        RowBox[{
+         RowBox[{"Cosh", "[", "t", "]"}], "^", "2"}]}], "}"}]}], "}"}], ",", 
+    " ", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", " ", "x"}], "}"}]}], "]"}]}]], "Input",
+ CellLabel->
+  "In[164]:=",ExpressionUUID->"60d224a8-ddce-48bb-a0de-0a7844271732"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{
+        RowBox[{"Cosh", "[", "t", "]"}], " ", 
+        RowBox[{"Sinh", "[", "t", "]"}]}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{"Tanh", "[", "t", "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Tanh", "[", "t", "]"}], ",", "0"}], "}"}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.886854151093091*^9},
+ CellLabel->
+  "Out[164]=",ExpressionUUID->"15b0832a-5b85-4f46-86b7-a4d2c912ac67"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CS2", " ", "//", " ", "PrettyCS"}]], "Input",
+ CellChangeTimes->{{3.88685415300928*^9, 3.886854165816498*^9}, 
+   3.886854756184865*^9},
+ CellLabel->
+  "In[166]:=",ExpressionUUID->"003e899d-7e5f-43fb-b162-486d02694dab"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         TemplateBox[{"\"\[CapitalGamma]\"", 
+           StyleBox["\"22\"", 
+            GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+            12., StripOnInput -> False], 
+           StyleBox["\"1\"", 
+            GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+            12., StripOnInput -> False]},
+          "Subsuperscript"],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->20.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "288cda57-4881-41b9-a50e-1c93bd60c479"],
+      Text[
+       Style[
+        Subsuperscript["\[CapitalGamma]", 
+         Style["22", 
+          GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 12.], 
+         Style["1", 
+          GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+          12.]], 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 20.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox["\<\"=\"\>",
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->20.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "5dbdea8e-1430-4942-96de-47f1c59b1397"],
+      Text[
+       Style["=", 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 20.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         RowBox[{
+          RowBox[{"Cosh", "[", "t", "]"}], " ", 
+          RowBox[{"Sinh", "[", "t", "]"}]}],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->16,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "cfb1ab5f-b913-4bfc-b541-d27a8c856f2d"],
+      Text[
+       Style[Cosh[$CellContext`t] Sinh[$CellContext`t], 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+        16]]]},
+    {
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         TemplateBox[{"\"\[CapitalGamma]\"", 
+           StyleBox["\"21\"", 
+            GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+            12., StripOnInput -> False], 
+           StyleBox["\"2\"", 
+            GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+            12., StripOnInput -> False]},
+          "Subsuperscript"],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->20.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "6d6d7fdc-f82a-49fb-b8c4-baa77081b87a"],
+      Text[
+       Style[
+        Subsuperscript["\[CapitalGamma]", 
+         Style["21", 
+          GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 12.], 
+         Style["2", 
+          GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+          12.]], 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 20.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox["\<\"=\"\>",
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->20.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "a21dccb4-8b39-483f-afdd-b6ae39aafb81"],
+      Text[
+       Style["=", 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 20.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         RowBox[{"Tanh", "[", "t", "]"}],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->16,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "d8046e9f-d836-4952-a372-6e6e4650ed92"],
+      Text[
+       Style[
+        Tanh[$CellContext`t], 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 16]]]}
+   },
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[0.7]}, 
+       Offset[0.27999999999999997`]}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.8]}, 
+       Offset[0.2]}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$, TableSpacing -> {2, 1}]]]], "Output",
+ CellChangeTimes->{3.886854166493956*^9, 3.8868547570085373`*^9},
+ CellLabel->
+  "Out[166]//TableForm=",ExpressionUUID->"923b51ba-c555-4689-83f5-\
+3e5b37689eec"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PrettyCS", "[", 
+  RowBox[{"CS2", ",", " ", 
+   RowBox[{"FontSize", " ", "->", "20"}], ",", " ", 
+   RowBox[{"FontFamily", "->", "\"\<Times\>\""}], ",", " ", 
+   RowBox[{"UseSymmetry", "->", "False"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.886854773571982*^9, 3.886854811543095*^9}},
+ CellLabel->
+  "In[168]:=",ExpressionUUID->"544eb935-a3ff-4859-8513-43eb1d7a160e"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         TemplateBox[{"\"\[CapitalGamma]\"", 
+           StyleBox["\"22\"", 
+            GrayLevel[0], FontFamily -> "Times", FontSize -> 15., 
+            StripOnInput -> False], 
+           StyleBox["\"1\"", 
+            GrayLevel[0], FontFamily -> "Times", FontSize -> 15., 
+            StripOnInput -> False]},
+          "Subsuperscript"],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"Times",
+         FontSize->25.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "6123e85e-43bd-4ed9-9a4b-e47f610e0502"],
+      Text[
+       Style[
+        Subsuperscript["\[CapitalGamma]", 
+         Style["22", 
+          GrayLevel[0], FontFamily -> "Times", FontSize -> 15.], 
+         Style["1", 
+          GrayLevel[0], FontFamily -> "Times", FontSize -> 15.]], 
+        GrayLevel[0], FontFamily -> "Times", FontSize -> 25.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox["\<\"=\"\>",
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"Times",
+         FontSize->25.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "7d5fb6fd-5e82-4ec0-9d68-87577a755016"],
+      Text[
+       Style["=", 
+        GrayLevel[0], FontFamily -> "Times", FontSize -> 25.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         RowBox[{
+          RowBox[{"Cosh", "[", "t", "]"}], " ", 
+          RowBox[{"Sinh", "[", "t", "]"}]}],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"Times",
+         FontSize->20,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "ff37433a-120d-4ea2-9999-608cc44cdd23"],
+      Text[
+       Style[Cosh[$CellContext`t] Sinh[$CellContext`t], 
+        GrayLevel[0], FontFamily -> "Times", FontSize -> 20]]]},
+    {
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         TemplateBox[{"\"\[CapitalGamma]\"", 
+           StyleBox["\"12\"", 
+            GrayLevel[0], FontFamily -> "Times", FontSize -> 15., 
+            StripOnInput -> False], 
+           StyleBox["\"2\"", 
+            GrayLevel[0], FontFamily -> "Times", FontSize -> 15., 
+            StripOnInput -> False]},
+          "Subsuperscript"],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"Times",
+         FontSize->25.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "5f9a5a39-6d72-40d6-8ad8-ba29ecb1285a"],
+      Text[
+       Style[
+        Subsuperscript["\[CapitalGamma]", 
+         Style["12", 
+          GrayLevel[0], FontFamily -> "Times", FontSize -> 15.], 
+         Style["2", 
+          GrayLevel[0], FontFamily -> "Times", FontSize -> 15.]], 
+        GrayLevel[0], FontFamily -> "Times", FontSize -> 25.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox["\<\"=\"\>",
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"Times",
+         FontSize->25.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "3daaa0d4-9ebc-47d4-819c-3747fef2ecf9"],
+      Text[
+       Style["=", 
+        GrayLevel[0], FontFamily -> "Times", FontSize -> 25.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         RowBox[{"Tanh", "[", "t", "]"}],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"Times",
+         FontSize->20,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "81b5f357-02b3-4926-bef3-c8739de397be"],
+      Text[
+       Style[
+        Tanh[$CellContext`t], 
+        GrayLevel[0], FontFamily -> "Times", FontSize -> 20]]]},
+    {
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         TemplateBox[{"\"\[CapitalGamma]\"", 
+           StyleBox["\"21\"", 
+            GrayLevel[0], FontFamily -> "Times", FontSize -> 15., 
+            StripOnInput -> False], 
+           StyleBox["\"2\"", 
+            GrayLevel[0], FontFamily -> "Times", FontSize -> 15., 
+            StripOnInput -> False]},
+          "Subsuperscript"],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"Times",
+         FontSize->25.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "a35d5dd7-885f-4612-bb54-f941210a3f44"],
+      Text[
+       Style[
+        Subsuperscript["\[CapitalGamma]", 
+         Style["21", 
+          GrayLevel[0], FontFamily -> "Times", FontSize -> 15.], 
+         Style["2", 
+          GrayLevel[0], FontFamily -> "Times", FontSize -> 15.]], 
+        GrayLevel[0], FontFamily -> "Times", FontSize -> 25.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox["\<\"=\"\>",
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"Times",
+         FontSize->25.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "d98fff83-9bc2-4013-bd08-f5116b1f8c6c"],
+      Text[
+       Style["=", 
+        GrayLevel[0], FontFamily -> "Times", FontSize -> 25.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         RowBox[{"Tanh", "[", "t", "]"}],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"Times",
+         FontSize->20,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "b851cff8-b32b-4aa7-82bf-0a6a7b1276e5"],
+      Text[
+       Style[
+        Tanh[$CellContext`t], 
+        GrayLevel[0], FontFamily -> "Times", FontSize -> 20]]]}
+   },
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[0.7]}, 
+       Offset[0.27999999999999997`]}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.8]}, 
+       Offset[0.2]}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$, TableSpacing -> {2, 1}]]]], "Output",
+ CellChangeTimes->{{3.886854798782907*^9, 3.886854812345784*^9}},
+ CellLabel->
+  "Out[168]//TableForm=",ExpressionUUID->"136e3593-1cd3-4d52-aee4-\
+b614a80b7123"]
 }, Open  ]]
 },
-WindowSize->{808, 911},
-WindowMargins->{{-1847, Automatic}, {Automatic, -511}},
+WindowSize->{773, 830},
+WindowMargins->{{-1847, Automatic}, {Automatic, -764}},
 FrontEndVersion->"13.1 for Mac OS X ARM (64-bit) (June 16, 2022)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"8c748e8a-2023-441d-bbe6-6d2ce1221b21"
@@ -66,6 +918,24 @@ Cell[CellGroupData[{
 Cell[807, 30, 220, 4, 29, "Print",ExpressionUUID->"eab461e1-775d-4928-81be-05358d61d9a0"],
 Cell[1030, 36, 252, 5, 29, "Print",ExpressionUUID->"642293f0-33e7-4d4b-8ce2-34a8d0e364d0"]
 }, Open  ]]
+}, Open  ]],
+Cell[1309, 45, 758, 23, 64, "Input",ExpressionUUID->"0f11a2f1-8494-492f-a29c-ea02aa28c3b3"],
+Cell[2070, 70, 215, 4, 37, "Input",ExpressionUUID->"f5cecc9c-8195-461d-8465-76f4a4aa7389"],
+Cell[CellGroupData[{
+Cell[2310, 78, 218, 4, 37, "Input",ExpressionUUID->"f1ec0f98-7ed3-40ef-b5f3-7528ffe3ac6c"],
+Cell[2531, 84, 15008, 394, 311, "Output",ExpressionUUID->"deb02085-a4ac-4bb2-b03c-d18dd1395926"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17576, 483, 524, 17, 37, "Input",ExpressionUUID->"60d224a8-ddce-48bb-a0de-0a7844271732"],
+Cell[18103, 502, 685, 23, 42, "Output",ExpressionUUID->"15b0832a-5b85-4f46-86b7-a4d2c912ac67"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18825, 530, 243, 5, 37, "Input",ExpressionUUID->"003e899d-7e5f-43fb-b162-486d02694dab"],
+Cell[19071, 537, 5404, 142, 123, "Output",ExpressionUUID->"923b51ba-c555-4689-83f5-3e5b37689eec"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24512, 684, 393, 8, 64, "Input",ExpressionUUID->"544eb935-a3ff-4859-8513-43eb1d7a160e"],
+Cell[24908, 694, 7313, 200, 173, "Output",ExpressionUUID->"136e3593-1cd3-4d52-aee4-b614a80b7123"]
 }, Open  ]]
 }
 ]
