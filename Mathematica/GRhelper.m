@@ -240,6 +240,7 @@ ChristoffelSymbols[metric_, coord_,
     If[SameQ[useHeader, True], TableHeadings -> {None, {a, "", b}}]]
    ];
    
+
 PrettyCS[ARGcslist_, 
    OptionsPattern[{FontSize -> 16, 
      FontFamily -> "American Typewriter", UseSymmetry -> True, 
@@ -262,12 +263,12 @@ PrettyCS[ARGcslist_,
      *)
      ARGcoord = 
        Take[{
-          SymbolName[\[Alpha]], 
-          SymbolName[\[Beta]], 
-          SymbolName[\[Gamma]], 
-          SymbolName[\[Delta]], 
-          SymbolName[\[Mu]], 
-          SymbolName[\[Nu]]
+          "1", 
+          "2", 
+          "3", 
+          "4", 
+          "5", 
+          "6"
         }, 
         n];
      }];
