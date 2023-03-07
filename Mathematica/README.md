@@ -1,6 +1,6 @@
-# GRHelper
+# GRHelper.m
 
-The functions within the GRHelper package were originally written by Chuck Evans (and some of his grad students) @ UNC Chapel Hill.
+The functions within the [GRHelper.m](./GRHelper.m) Mathematica package were originally written by Chuck Evans (and some of his grad students) @ UNC Chapel Hill.
 
 David Brown @ NC State created the GRHelper package and tidied things up and put those functions into the package form you see here.
 
@@ -11,7 +11,60 @@ Inside the Mathematica Desktop app, locate and open the **usingChristoffelSymbol
 
 To use any function in the GRHelper package, do like you were instructed above and **Install the package first**! Once that's done, then you can use any of the functions in the package.
 
-## Function: ChristoffelSymbols
+### PrettyCS
+Takes a list (result from an Affine operation) and displays that list in a "pretty" format.
+
+<b>ARGS</b>
+With no args, PrettyCS will do its best to determine the dimensionality of the input list. The coordinate indices are numeric, like this:
+<p align="center">
+    <img src="images/PrettyCS-no-args.png" width=50%>
+</p>
+
+<b>ARGS</b>
+<table>
+    <thead>
+        <tr>
+            <th>Option</th>
+            <th>Default</th>
+            <th>Usage</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>FontSize</td>
+            <td>16</td>
+            <td>FontSize -> 22</td>
+            <td>Set the font size (measured in points) of the output</td>
+        </tr>
+        <tr>
+            <td>FontFamily</td>
+            <td>"American Typewriter</td>
+            <td>FontFamily -> "Courier"</td>
+            <td>Set the font family of the output. You can choose from whatever font family your machine supports.</td>
+        </tr>
+        <tr>
+            <td>UseSymmetry</td>
+            <td>True</td>
+            <td>UseSymmetry -> False}</td>
+            <td>The asusumption is that the 2nd and 3rd indices are symmetric, with &Gamma;^{&alpha;}_{&mu;&nu;} = &Gamma;^{&alpha;}_{&nu;&mu;}.  If set "False", all Christoffel Symbols will be show (redundant output)</td>
+        </tr>
+        <tr>
+            <td>Coords</td>
+            <td>{"1","2","3"}</td>
+            <td>Coords -> {r, &theta;, &phi;}</td>
+            <td>Sets the coordinates to display the indices in.</td>
+        </tr>
+    </tbody>
+</table>
+
+
+Output from [prettycs-testing.nb](prettycs-testing.nb)
+<p align="center">
+    <img src="images/PrettyCS-testing.png" width=50%>
+</p>
+
+### Function: ChristoffelSymbols
 
 First, bring all of the GRHelper references into the current $Context with the "<< GRHelper`" command.
 ### Default settings
