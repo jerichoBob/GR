@@ -46,6 +46,12 @@ StyleBox[\",\",\nFontSlant->\"Italic\"]\)\!\(\*
 StyleBox[\"coordinates\",\nFontSlant->\"Italic\"]\)\!\(\*
 StyleBox[\"]\",\nFontSlant->\"Italic\"]\) = Prints out the Christoffel Symbols of the second kind in a visually recognizable way"
 
+PrettyR::usage = "PrettyR[\!\(\*
+StyleBox[\"Riemann\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\",\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\"coordinates\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\"]\",\nFontSlant->\"Italic\"]\) = Prints out the Riemann (3 1) Tensor in a visually recognizable way"
+
 Riemann::usage = "Riemann[\!\(\*
 StyleBox[\"metric\",\nFontSlant->\"Italic\"]\)\!\(\*
 StyleBox[\",\",\nFontSlant->\"Italic\"]\)\!\(\*
