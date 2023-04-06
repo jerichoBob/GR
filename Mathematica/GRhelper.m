@@ -182,7 +182,7 @@ StyleBox[\"field\",\nFontSlant->\"Italic\"]\)] = Vector product of worldline tan
 GRhelper::usage = "GRhelper \!\(\*
 StyleBox[\"Main\",\nFontSlant->\"Italic\"]\)\!\(\*
 StyleBox[\" \",\nFontSlant->\"Italic\"]\)\!\(\*
-StyleBox[\"Functions\",\nFontSlant->\"Italic\"]\): InverseMetric, ChristoffelSymbols, Affine, Riemann, RicciTensor, RicciScalar, Einstein, CovDerVector, CovDerOneForm, 
+StyleBox[\"Functions\",\nFontSlant->\"Italic\"]\): InverseMetric, ChristoffelSymbols, PrettyCS, PrettyR, Affine, Riemann, RicciTensor, RicciScalar, Einstein, CovDerVector, CovDerOneForm, 
 	GradScalar, CovDerTwoTensorDownDown, Worldline, GeodesicEqns, VelocityNorm, UdotKVF
 	\!\(\*
 StyleBox[\"Other\",\nFontSlant->\"Italic\"]\)\!\(\*
@@ -261,17 +261,8 @@ PrettyCS[ARGcslist_,
      n, "] doesn't match the number of coordinates passed in [",m, 
      "]... please fix it !"];
      *)
-     ARGcoord = 
-       Take[{
-          "1", 
-          "2", 
-          "3", 
-          "4", 
-          "5", 
-          "6"
-        }, 
-        n];
-     }];
+     ARGcoord =  Take[{ "1", "2", "3", "4", "5", "6"}, n];  
+    }];
    (*misc Variables *)
    supersubsize = fontSize *.75;
    gammasize = fontSize * 1.25;
@@ -300,6 +291,50 @@ PrettyCS[ARGcslist_,
     TableSpacing -> {2, 1}
     ]];
 
+PrettyR[ARGlist_, 
+  OptionsPattern[{FontSize -> 16, FontFamily -> "American Typewriter",
+     UseSymmetry -> True, Coords -> {}}]] := 
+ Block[{n, m, ARGcoord, fontSize, fontFamily, useHeader},
+  (*Options Handling*)
+  ARGcoord = OptionValue[Coords];
+  fontSize = OptionValue[FontSize];
+  fontFamily = OptionValue[FontFamily];
+  useSymmetry = OptionValue[UseSymmetry];
+  (* ARGlist contains the matrix elements of the Riemann Tensor *)
+  n = Power[Length[Flatten[ARGlist]], 0.25];
+  (*dimensionlity of list*)
+  m = Length[ARGcoord];
+  If[m != 
+    n, {(ARGcoord = Take[{"1", "2", "3", "4", "5", "6"}, n];)}];
+  (*misc Variables*)supersubsize = fontSize*.75;
+  Rsize = fontSize*1.25;
+  myR = SymbolName[R];
+  
+  list := Table[
+    If[ARGlist[[\[Alpha], \[Beta], \[Mu], \[Nu]]] =!= Undefined && 
+      ARGlist[[\[Alpha], \[Beta], \[Mu], \[Nu]]] =!= 0,
+     {
+      upper = 
+       Style[ToString[ARGcoord[[\[Alpha]]]], Black, 
+        FontFamily -> fontFamily, FontSize -> supersubsize];
+      lower = 
+       Style[StringJoin["  ", ToString[ARGcoord[[\[Beta]]]], "", 
+         ToString[ARGcoord[[\[Mu]]]], "", 
+         ToString[ARGcoord[[\[Nu]]]]], Black, 
+        FontFamily -> fontFamily, FontSize -> supersubsize];
+      Text[
+       Style[Subsuperscript[myR, lower, upper], Black, 
+        FontFamily -> fontFamily, FontSize -> Rsize]], 
+      Text[Style["=", Black, FontFamily -> fontFamily, 
+        FontSize -> Rsize]], 
+      Text[Style[ARGlist[[\[Alpha], \[Beta], \[Mu], \[Nu]]], Black, 
+        FontFamily -> fontFamily, FontSize -> fontSize]]
+      }], {\[Alpha], 1, n}, {\[Beta], 1, n}, {\[Mu], 1, n}, {\[Nu], 1,
+      If[useSymmetry, \[Mu], n]}];
+  
+  (*Print["list: ",list];*)
+  TableForm[Partition[DeleteCases[Flatten[list], Null], 3], 
+   TableSpacing -> {2, 1}]]
 
 Affine[g_,xx_]:=Block[{n,ig,res},n= Length[xx];ig=InverseMetric[g];
 res=Table[(1/2)*Sum[ig[[i,s]]*(-D[g[[j,k]],xx[[s]]]+D[g[[j,s]],xx[[k]]]+D[g[[s,k]],xx[[j]]]),{s,1,n}],{i,1,n},{j,1,n},{k,1,n}];
