@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     69211,       1750]
-NotebookOptionsPosition[     66244,       1692]
-NotebookOutlinePosition[     66643,       1708]
-CellTagsIndexPosition[     66600,       1705]
+NotebookDataLength[     78066,       1994]
+NotebookOptionsPosition[     74949,       1933]
+NotebookOutlinePosition[     75402,       1951]
+CellTagsIndexPosition[     75359,       1948]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -529,12 +529,12 @@ Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"]\\\",\\nFontSlant->\\\"Italic\\\"]\\) \
               
               DynamicBox[FEPrivate`FrontEndResource[
                "FEBitmaps", "DownPointerOpener"],
-               ImageSizeCache->{13., {2., 11.}}], True->
-              
+               ImageSizeCache->{7.199999999999999, {1., 6.199999999999999}}], 
+              True->
               DynamicBox[FEPrivate`FrontEndResource[
                "FEBitmaps", "DownPointerOpenerHot"],
-               ImageSizeCache->{13., {2., 11.}}]}, Dynamic[
-              System`InformationDump`mouseOver$$]],
+               ImageSizeCache->{7.199999999999999, {1., 6.199999999999999}}]},
+               Dynamic[System`InformationDump`mouseOver$$]],
              Alignment->Left,
              Appearance->{"Default" -> None},
              
@@ -940,89 +940,10 @@ Cell[BoxData[
  CellLabel->"Out[29]=",ExpressionUUID->"acdcc5ae-6642-4730-8b4b-d1baa178768c"]
 }, Open  ]],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[
  RowBox[{"r1", " ", "//", "MatrixForm"}]], "Input",
  CellChangeTimes->{{3.889803177974325*^9, 3.889803192536065*^9}},
  CellLabel->"In[30]:=",ExpressionUUID->"729115e8-764a-48b2-aedf-a466706e1706"],
-
-Cell[BoxData[
- TagBox[
-  RowBox[{"(", "\[NoBreak]", GridBox[{
-     {
-      RowBox[{"(", "\[NoBreak]", GridBox[{
-         {"0", "0"},
-         {"0", "0"}
-        },
-        GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
-        GridBoxSpacings->{"Columns" -> {
-            Offset[0.27999999999999997`], {
-             Offset[0.7]}, 
-            Offset[0.27999999999999997`]}, "Rows" -> {
-            Offset[0.2], {
-             Offset[0.4]}, 
-            Offset[0.2]}}], "\[NoBreak]", ")"}], 
-      RowBox[{"(", "\[NoBreak]", GridBox[{
-         {"0", 
-          SuperscriptBox[
-           RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"]},
-         {
-          RowBox[{"-", 
-           SuperscriptBox[
-            RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"]}], "0"}
-        },
-        GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
-        GridBoxSpacings->{"Columns" -> {
-            Offset[0.27999999999999997`], {
-             Offset[0.7]}, 
-            Offset[0.27999999999999997`]}, "Rows" -> {
-            Offset[0.2], {
-             Offset[0.4]}, 
-            Offset[0.2]}}], "\[NoBreak]", ")"}]},
-     {
-      RowBox[{"(", "\[NoBreak]", GridBox[{
-         {"0", 
-          RowBox[{"-", "1"}]},
-         {"1", "0"}
-        },
-        GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
-        GridBoxSpacings->{"Columns" -> {
-            Offset[0.27999999999999997`], {
-             Offset[0.7]}, 
-            Offset[0.27999999999999997`]}, "Rows" -> {
-            Offset[0.2], {
-             Offset[0.4]}, 
-            Offset[0.2]}}], "\[NoBreak]", ")"}], 
-      RowBox[{"(", "\[NoBreak]", GridBox[{
-         {"0", "0"},
-         {"0", "0"}
-        },
-        GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
-        GridBoxSpacings->{"Columns" -> {
-            Offset[0.27999999999999997`], {
-             Offset[0.7]}, 
-            Offset[0.27999999999999997`]}, "Rows" -> {
-            Offset[0.2], {
-             Offset[0.4]}, 
-            Offset[0.2]}}], "\[NoBreak]", ")"}]}
-    },
-    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
-    GridBoxSpacings->{"Columns" -> {
-        Offset[0.27999999999999997`], {
-         Offset[0.7]}, 
-        Offset[0.27999999999999997`]}, "Rows" -> {
-        Offset[0.2], {
-         Offset[0.4]}, 
-        Offset[0.2]}}], "\[NoBreak]", ")"}],
-  Function[BoxForm`e$, 
-   MatrixForm[BoxForm`e$]]]], "Output",
- CellChangeTimes->{{3.889803178866951*^9, 3.889803193471216*^9}, 
-   3.889807910282886*^9, 3.889808461949483*^9},
- CellLabel->
-  "Out[30]//MatrixForm=",ExpressionUUID->"5c8416a6-4e43-4c18-8a60-\
-82c3ab49799f"]
-}, Open  ]],
 
 Cell[BoxData[
  RowBox[{"(*", "  ", 
@@ -1225,18 +1146,45 @@ Cell[BoxData[
      FontWeight->"Bold"], 
     StyleBox[" ",
      FontWeight->"Bold"], 
-    StyleBox[
-     RowBox[{
-     "coordinate", " ", "passed", " ", "in", " ", "Coords", " ", "are", " ", 
-      "used"}],
-     FontWeight->"Plain"]}], " ", "*)"}], " ", "\[IndentingNewLine]", 
+    RowBox[{"the", " ", 
+     StyleBox["coordinates",
+      FontWeight->"Plain"], 
+     StyleBox[" ",
+      FontWeight->"Plain"], 
+     StyleBox["passed",
+      FontWeight->"Plain"], 
+     StyleBox[" ",
+      FontWeight->"Plain"], 
+     StyleBox["in",
+      FontWeight->"Plain"], 
+     StyleBox[" ",
+      FontWeight->"Plain"], 
+     StyleBox["the",
+      FontWeight->"Plain"], 
+     StyleBox[" ",
+      FontWeight->"Plain"], 
+     StyleBox["Coords",
+      FontWeight->"Plain"], 
+     StyleBox[" ",
+      FontWeight->"Plain"], 
+     StyleBox["arg",
+      FontWeight->"Plain"], 
+     StyleBox[" ",
+      FontWeight->"Plain"], 
+     StyleBox["are",
+      FontWeight->"Plain"], 
+     StyleBox[" ",
+      FontWeight->"Plain"], 
+     StyleBox["used",
+      FontWeight->"Plain"]}]}], " ", "*)"}], " ", "\[IndentingNewLine]", 
   RowBox[{"PrettyR", "[", 
    RowBox[{"r1", ",", " ", 
     RowBox[{"Coords", " ", "->", " ", "coords"}]}], "]"}]}]], "Input",
  CellChangeTimes->{
   3.889804265796557*^9, 3.88980538992826*^9, {3.889808893414672*^9, 
-   3.889808894109768*^9}},
- CellLabel->"In[43]:=",ExpressionUUID->"c0b33b21-d556-4bdc-96e8-f8108fb68bda"],
+   3.889808894109768*^9}, {3.889814587609211*^9, 
+   3.889814609753137*^9}},ExpressionUUID->"c0b33b21-d556-4bdc-96e8-\
+f8108fb68bda"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -1688,10 +1636,305 @@ Cell[BoxData[
  CellLabel->
   "Out[44]//TableForm=",ExpressionUUID->"ba3150e0-14cb-470b-bff9-\
 54217d5d3757"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    StyleBox[
+     RowBox[{"2.", " ", "Explicit", " ", "Arguments"}],
+     FontWeight->"Bold"], 
+    StyleBox[" ",
+     FontWeight->"Bold"], 
+    StyleBox["-",
+     FontWeight->"Bold"], 
+    StyleBox[" ",
+     FontWeight->"Bold"], 
+    StyleBox[
+     RowBox[{"Font", " ", "Sylings", " ", 
+      RowBox[{"(", 
+       RowBox[{
+       "only", " ", "FontFamily", " ", "and", " ", "FontSize", " ", "for", 
+        " ", "now"}], ")"}]}],
+     FontWeight->"Plain"]}], " ", "*)"}], " ", "\[IndentingNewLine]", 
+  RowBox[{"PrettyR", "[", 
+   RowBox[{"r1", ",", " ", 
+    RowBox[{"Coords", " ", "->", " ", "coords"}], ",", " ", 
+    RowBox[{"UseSymmetry", "->", "False"}], ",", " ", 
+    RowBox[{"FontFamily", "->", "\"\<Rockwell\>\""}], ",", " ", 
+    RowBox[{"FontSize", "->", "28"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.889814630452177*^9, 
+  3.889814918858227*^9}},ExpressionUUID->"c99c907f-f005-44ad-a747-\
+54e8027b8494"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         TemplateBox[{"\"R\"", 
+           StyleBox["\"  \[Phi]\[Theta]\[Phi]\"", 
+            GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 21., 
+            StripOnInput -> False], 
+           StyleBox["\"\[Theta]\"", 
+            GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 21., 
+            StripOnInput -> False]},
+          "Subsuperscript"],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"Rockwell",
+         FontSize->35.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "0a92033b-feca-4c97-b85c-f6d79b9332f4"],
+      Text[
+       Style[
+        Subsuperscript["R", 
+         Style["  \[Phi]\[Theta]\[Phi]", 
+          GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 21.], 
+         Style["\[Theta]", 
+          GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 21.]], 
+        GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 35.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox["\<\"=\"\>",
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"Rockwell",
+         FontSize->35.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "66054ea3-1c6d-484a-a95a-c8c6ef2ce5e4"],
+      Text[
+       Style["=", 
+        GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 35.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         SuperscriptBox[
+          RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"Rockwell",
+         FontSize->28,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "5983608c-eab0-4613-aa3a-84d62fb8231d"],
+      Text[
+       Style[Sin[$CellContext`\[Theta]]^2, 
+        GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 28]]]},
+    {
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         TemplateBox[{"\"R\"", 
+           StyleBox["\"  \[Phi]\[Phi]\[Theta]\"", 
+            GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 21., 
+            StripOnInput -> False], 
+           StyleBox["\"\[Theta]\"", 
+            GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 21., 
+            StripOnInput -> False]},
+          "Subsuperscript"],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"Rockwell",
+         FontSize->35.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "e8092d9f-5479-42b5-92bd-dd3b21475b43"],
+      Text[
+       Style[
+        Subsuperscript["R", 
+         Style["  \[Phi]\[Phi]\[Theta]", 
+          GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 21.], 
+         Style["\[Theta]", 
+          GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 21.]], 
+        GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 35.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox["\<\"=\"\>",
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"Rockwell",
+         FontSize->35.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "6618f940-50ed-4223-98dd-87fca3548f7f"],
+      Text[
+       Style["=", 
+        GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 35.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         RowBox[{"-", 
+          SuperscriptBox[
+           RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"]}],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"Rockwell",
+         FontSize->28,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "fccb3173-c924-4b8d-b927-3b8dcaa804bc"],
+      Text[
+       Style[-Sin[$CellContext`\[Theta]]^2, 
+        GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 28]]]},
+    {
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         TemplateBox[{"\"R\"", 
+           StyleBox["\"  \[Theta]\[Theta]\[Phi]\"", 
+            GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 21., 
+            StripOnInput -> False], 
+           StyleBox["\"\[Phi]\"", 
+            GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 21., 
+            StripOnInput -> False]},
+          "Subsuperscript"],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"Rockwell",
+         FontSize->35.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "d3fd6e7e-ad94-46b9-952e-5ddea2fc4ebd"],
+      Text[
+       Style[
+        Subsuperscript["R", 
+         Style["  \[Theta]\[Theta]\[Phi]", 
+          GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 21.], 
+         Style["\[Phi]", 
+          GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 21.]], 
+        GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 35.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox["\<\"=\"\>",
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"Rockwell",
+         FontSize->35.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "5b7c142e-eef2-4d3f-88ce-0abb8f3b5d3f"],
+      Text[
+       Style["=", 
+        GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 35.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         RowBox[{"-", "1"}],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"Rockwell",
+         FontSize->28,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "e6c0aef8-def0-476b-8ab4-0f4fb706c002"],
+      Text[
+       Style[-1, 
+        GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 28]]]},
+    {
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         TemplateBox[{"\"R\"", 
+           StyleBox["\"  \[Theta]\[Phi]\[Theta]\"", 
+            GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 21., 
+            StripOnInput -> False], 
+           StyleBox["\"\[Phi]\"", 
+            GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 21., 
+            StripOnInput -> False]},
+          "Subsuperscript"],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"Rockwell",
+         FontSize->35.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "96d0aee9-db98-472b-9394-2fb5ce2d682c"],
+      Text[
+       Style[
+        Subsuperscript["R", 
+         Style["  \[Theta]\[Phi]\[Theta]", 
+          GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 21.], 
+         Style["\[Phi]", 
+          GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 21.]], 
+        GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 35.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox["\<\"=\"\>",
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"Rockwell",
+         FontSize->35.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "c0d4245a-4316-43e1-b734-046970719b93"],
+      Text[
+       Style["=", 
+        GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 35.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox["1",
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"Rockwell",
+         FontSize->28,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "a8fc5e8d-56d6-4871-a724-4dc7336f6a8f"],
+      Text[
+       Style[1, 
+        GrayLevel[0], FontFamily -> "Rockwell", FontSize -> 28]]]}
+   },
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[0.7]}, 
+       Offset[0.27999999999999997`]}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.8]}, 
+       Offset[0.2]}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$, TableSpacing -> {2, 1}]]]], "Output",
+ CellChangeTimes->{{3.8898146972143993`*^9, 3.889814889761491*^9}},
+ CellLabel->
+  "Out[65]//TableForm=",ExpressionUUID->"fb041b7c-0ca4-4b42-b833-\
+9594aff88cf1"]
 }, Open  ]]
 },
-WindowSize->{1294, 947},
-WindowMargins->{{-2133, Automatic}, {Automatic, -764}},
+WindowSize->{1317, 1073},
+WindowMargins->{{-2133, Automatic}, {692, Automatic}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
 FrontEndVersion->"13.1 for Mac OS X ARM (64-bit) (June 16, 2022)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"f0e9ce5b-f957-4a85-a2ee-851d89a0f836"
@@ -1724,33 +1967,34 @@ Cell[3338, 104, 321, 7, 37, "Input",ExpressionUUID->"9c339974-d594-4add-88c8-577
 Cell[3662, 113, 340, 7, 37, "Input",ExpressionUUID->"fab8755a-a1df-48dc-a399-daef076ba2aa"],
 Cell[CellGroupData[{
 Cell[4027, 124, 197, 3, 37, "Input",ExpressionUUID->"3dbb8a6b-e630-436a-8536-80d4d01e7f7e"],
-Cell[4227, 129, 24315, 535, 119, "Output",ExpressionUUID->"445cd924-be4d-4ea7-853c-4aab30790069"]
+Cell[4227, 129, 24371, 535, 119, "Output",ExpressionUUID->"445cd924-be4d-4ea7-853c-4aab30790069"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[28579, 669, 424, 7, 37, "Input",ExpressionUUID->"c9f669ba-48ae-495f-ae2a-7eb1fd9331e4"],
-Cell[29006, 678, 8017, 207, 177, "Output",ExpressionUUID->"1b5640c7-a22a-42bf-9e65-ef461fa9deaf"]
+Cell[28635, 669, 424, 7, 37, "Input",ExpressionUUID->"c9f669ba-48ae-495f-ae2a-7eb1fd9331e4"],
+Cell[29062, 678, 8017, 207, 177, "Output",ExpressionUUID->"1b5640c7-a22a-42bf-9e65-ef461fa9deaf"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[37060, 890, 324, 6, 37, "Input",ExpressionUUID->"228fca5e-f702-48ee-a16f-d565c1dd06af"],
-Cell[37387, 898, 1297, 41, 46, "Output",ExpressionUUID->"acdcc5ae-6642-4730-8b4b-d1baa178768c"]
+Cell[37116, 890, 324, 6, 37, "Input",ExpressionUUID->"228fca5e-f702-48ee-a16f-d565c1dd06af"],
+Cell[37443, 898, 1297, 41, 46, "Output",ExpressionUUID->"acdcc5ae-6642-4730-8b4b-d1baa178768c"]
+}, Open  ]],
+Cell[38755, 942, 210, 3, 37, "Input",ExpressionUUID->"729115e8-764a-48b2-aedf-a466706e1706"],
+Cell[38968, 947, 440, 9, 37, "Input",ExpressionUUID->"9bd45fa2-430f-4a3f-a2fc-ab1764b36ffd"],
+Cell[CellGroupData[{
+Cell[39433, 960, 865, 22, 64, "Input",ExpressionUUID->"ffd932f1-67ab-43e5-a779-265955bfc723"],
+Cell[40301, 984, 5303, 141, 123, "Output",ExpressionUUID->"cc409480-ad92-48e2-b74f-245ad74e397c"]
+}, Open  ]],
+Cell[45619, 1128, 152, 3, 37, "Input",ExpressionUUID->"6749c57c-ff3d-4812-8211-c27fd852ecaa"],
+Cell[CellGroupData[{
+Cell[45796, 1135, 1458, 51, 64, "Input",ExpressionUUID->"c0b33b21-d556-4bdc-96e8-f8108fb68bda"],
+Cell[47257, 1188, 5443, 141, 127, "Output",ExpressionUUID->"304c6084-8848-43ce-8ee0-7d0e461d5524"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[38721, 944, 210, 3, 37, "Input",ExpressionUUID->"729115e8-764a-48b2-aedf-a466706e1706"],
-Cell[38934, 949, 2662, 74, 133, "Output",ExpressionUUID->"5c8416a6-4e43-4c18-8a60-82c3ab49799f"]
-}, Open  ]],
-Cell[41611, 1026, 440, 9, 37, "Input",ExpressionUUID->"9bd45fa2-430f-4a3f-a2fc-ab1764b36ffd"],
-Cell[CellGroupData[{
-Cell[42076, 1039, 865, 22, 64, "Input",ExpressionUUID->"ffd932f1-67ab-43e5-a779-265955bfc723"],
-Cell[42944, 1063, 5303, 141, 123, "Output",ExpressionUUID->"cc409480-ad92-48e2-b74f-245ad74e397c"]
-}, Open  ]],
-Cell[48262, 1207, 152, 3, 37, "Input",ExpressionUUID->"6749c57c-ff3d-4812-8211-c27fd852ecaa"],
-Cell[CellGroupData[{
-Cell[48439, 1214, 803, 24, 64, "Input",ExpressionUUID->"c0b33b21-d556-4bdc-96e8-f8108fb68bda"],
-Cell[49245, 1240, 5443, 141, 127, "Output",ExpressionUUID->"304c6084-8848-43ce-8ee0-7d0e461d5524"]
+Cell[52737, 1334, 1270, 35, 64, "Input",ExpressionUUID->"c74140b1-b118-4016-a7ec-52a693d54fd9"],
+Cell[54010, 1371, 10230, 266, 227, "Output",ExpressionUUID->"ba3150e0-14cb-470b-bff9-54217d5d3757"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[54725, 1386, 1270, 35, 64, "Input",ExpressionUUID->"c74140b1-b118-4016-a7ec-52a693d54fd9"],
-Cell[55998, 1423, 10230, 266, 227, "Output",ExpressionUUID->"ba3150e0-14cb-470b-bff9-54217d5d3757"]
+Cell[64277, 1642, 981, 28, 64, "Input",ExpressionUUID->"c99c907f-f005-44ad-a747-54e8027b8494"],
+Cell[65261, 1672, 9672, 258, 317, "Output",ExpressionUUID->"fb041b7c-0ca4-4b42-b833-9594aff88cf1"]
 }, Open  ]]
 }
 ]
