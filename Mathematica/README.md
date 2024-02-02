@@ -4,7 +4,7 @@ The functions within the [GRHelper.m](./GRHelper.m) Mathematica package were ori
 
 David Brown @ NC State created the GRHelper package and tidied things up and put those functions into the package form you see here.
 
-Bob Seaton @ NC State wanted a prettier output for the Christoffel Symbols, so he added that function and checked it into github.
+Bob Seaton @ NC State wanted a prettier output for the Christoffel Symbols, so he added that function and checked it into github. Apparently, he also likes talking about himself in the 3rd person :P 
 ## Usage
 
 Inside the Mathematica Desktop app, locate and open the **usingChristoffelSymbols.nb** file (open it inside Mathematica!). It has examples you can play with. But before you can use that file, you'll need to [install the GRHelper package](README-InstallPackage.md).
