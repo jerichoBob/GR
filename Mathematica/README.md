@@ -10,7 +10,7 @@ Bob Seaton @ NC State wanted a prettier output for the Christoffel Symbols, so h
 
 Inside the Mathematica Desktop app, locate and open the **usingChristoffelSymbols.nb** file (open it inside Mathematica!). It has examples you can play with. But before you can use that file, you'll need to [install the GRHelper package](README-InstallPackage.md).
 
-<img src="images/Christoffel Symbols and the Covariant Derivative.png" width=25%>
+<img src="images/Christoffel Symbols and the Covariant Derivative.png" width=500px>
 
 To use any function in the GRHelper package, do like you were instructed above and **Install the package first**! Once that's done, then you can use any of the functions in the package.
 
