@@ -22,8 +22,7 @@ That will bring up the filesystem dialog. Navigate to where you downloaded the G
 <img src="images/InstallPackage-SelectPackageFile.png" width=25%>
 
 
-Finally, select "OK" in this redundantly redundant dialog.
+Finally, select "OK" to complete the installation.
 
 <img src="images/InstallPackage-OK.png" width=25%>
 
-## Load

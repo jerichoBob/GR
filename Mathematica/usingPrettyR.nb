@@ -1,0 +1,746 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     26401,        738]
+NotebookOptionsPosition[     23806,        688]
+NotebookOutlinePosition[     24284,        707]
+CellTagsIndexPosition[     24241,        704]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"<<", "GRhelper`"}]], "Input",
+ CellLabel->"In[28]:=",ExpressionUUID->"da7b09a7-0d58-49a6-84e1-41f87a2e8e03"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"Enter ?GRhelper for a list of functions\"\>"], "Print",
+ CellChangeTimes->{3.917098290609221*^9},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"57ed2e2c-3861-4a9d-931b-f04026ed2c19"],
+
+Cell[BoxData["\<\"Enter ?FunctionName for a description of the function \
+'FunctionName'\"\>"], "Print",
+ CellChangeTimes->{3.917098290611349*^9},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"f961a7c7-e2d4-4eee-91c0-3a17fbdcce93"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"?", "GRhelper"}]], "Input",
+ CellChangeTimes->{{3.889806913575203*^9, 3.889806915488523*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"d12cbc4e-5d6b-4cdc-9a81-2dde67725520"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"g1", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       SuperscriptBox["r", "2"], ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{
+        SuperscriptBox["r", "2"], 
+        SuperscriptBox[
+         RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"]}]}], "}"}]}], "}"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.889800572002307*^9, 3.88980057225745*^9}, {
+  3.889800646829001*^9, 3.889800650107317*^9}},
+ CellLabel->"In[29]:=",ExpressionUUID->"a80bf266-507f-40dc-bd1f-27247d23c9fa"],
+
+Cell[BoxData[
+ RowBox[{"MatrixForm", "[", "g1", "]"}]], "Input",
+ CellChangeTimes->{{3.8898006604376783`*^9, 3.889800675334721*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"e2d88d7f-ee6c-42f4-9ca5-436bfa900cc1"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"coords", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"\[Theta]", ",", " ", "\[Phi]"}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.885026432671489*^9, 3.8850264337780437`*^9}, 
+   3.889800686875366*^9},
+ CellLabel->"In[30]:=",ExpressionUUID->"9c339974-d594-4add-88c8-5776301f4a24"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cs1", " ", "=", " ", 
+   RowBox[{"Affine", "[", 
+    RowBox[{"g1", ",", "coords"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8898006920939302`*^9, 3.889800720908039*^9}, {
+  3.889809029948318*^9, 3.889809031296712*^9}},
+ CellLabel->"In[31]:=",ExpressionUUID->"fab8755a-a1df-48dc-a399-daef076ba2aa"],
+
+Cell[BoxData[
+ RowBox[{"?", "PrettyR"}]], "Input",
+ CellChangeTimes->{{3.889807953748941*^9, 3.8898079594607973`*^9}},
+ CellLabel->"In[27]:=",ExpressionUUID->"3dbb8a6b-e630-436a-8536-80d4d01e7f7e"],
+
+Cell[BoxData[
+ RowBox[{"PrettyCS", "[", 
+  RowBox[{"cs1", " ", ",", " ", 
+   RowBox[{"Coords", " ", "->", " ", "coords"}], ",", " ", 
+   RowBox[{"UseSymmetry", " ", "->", " ", "False"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8898007230544357`*^9, 3.889800729104931*^9}, {
+   3.889800846083387*^9, 3.889800872070641*^9}, 3.889809043858074*^9},
+ CellLabel->"In[46]:=",ExpressionUUID->"c9f669ba-48ae-495f-ae2a-7eb1fd9331e4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"r1", " ", "=", " ", 
+  RowBox[{"Riemann", "[", 
+   RowBox[{"g1", ",", " ", "coords"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.889800887124757*^9, 3.88980089466518*^9}, {
+  3.889803165077052*^9, 3.8898031842440147`*^9}},
+ CellLabel->"In[32]:=",ExpressionUUID->"228fca5e-f702-48ee-a16f-d565c1dd06af"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", 
+         SuperscriptBox[
+          RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", 
+          SuperscriptBox[
+           RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"]}], ",", "0"}], "}"}]}],
+       "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", 
+         RowBox[{"-", "1"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0"}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}]}], "}"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.917098322140079*^9},
+ CellLabel->"Out[32]=",ExpressionUUID->"dd45a0d9-fa17-4908-92e4-8d5b01758862"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"r1", " ", "//", "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.889803177974325*^9, 3.889803192536065*^9}},
+ CellLabel->"In[33]:=",ExpressionUUID->"729115e8-764a-48b2-aedf-a466706e1706"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+         {"0", "0"},
+         {"0", "0"}
+        },
+        GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.7]}, 
+            Offset[0.27999999999999997`]}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}}], "\[NoBreak]", ")"}], 
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+         {"0", 
+          SuperscriptBox[
+           RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"]},
+         {
+          RowBox[{"-", 
+           SuperscriptBox[
+            RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"]}], "0"}
+        },
+        GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.7]}, 
+            Offset[0.27999999999999997`]}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}}], "\[NoBreak]", ")"}]},
+     {
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+         {"0", 
+          RowBox[{"-", "1"}]},
+         {"1", "0"}
+        },
+        GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.7]}, 
+            Offset[0.27999999999999997`]}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}}], "\[NoBreak]", ")"}], 
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+         {"0", "0"},
+         {"0", "0"}
+        },
+        GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.7]}, 
+            Offset[0.27999999999999997`]}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}}], "\[NoBreak]", ")"}]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.917098327247806*^9},
+ CellLabel->
+  "Out[33]//MatrixForm=",ExpressionUUID->"514ff956-ea85-4fce-9223-\
+ccbc2c1f6f86"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", "  ", 
+  RowBox[{"Two", " ", "ways", " ", "to", " ", "call", " ", 
+   StyleBox["PrettyR",
+    FontWeight->"Bold"]}], "  ", "*)"}]], "Input",
+ CellChangeTimes->{{3.88980321098461*^9, 3.889803241244864*^9}, {
+  3.889808540768845*^9, 3.889808562303328*^9}, {3.8898085944330482`*^9, 
+  3.889808749525642*^9}, {3.889808789789852*^9, 
+  3.889808806883815*^9}},ExpressionUUID->"9bd45fa2-430f-4a3f-a2fc-\
+ab1764b36ffd"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    StyleBox[
+     RowBox[{"1.", " ", "Implicit", " ", "Arguments"}],
+     FontWeight->"Bold"], 
+    StyleBox[" ",
+     FontWeight->"Bold"], 
+    StyleBox["-",
+     FontWeight->"Bold"], 
+    StyleBox[" ",
+     FontWeight->"Bold"], 
+    StyleBox[
+     RowBox[{"coordinate", " ", "numbers", " ", "are", " ", "used"}],
+     FontWeight->"Plain"]}], " ", "*)"}], " ", "\[IndentingNewLine]", 
+  RowBox[{"r1", " ", "//", " ", "PrettyR"}]}]], "Input",
+ CellChangeTimes->{{3.88980349990338*^9, 3.889803504332569*^9}, {
+  3.889805555488467*^9, 3.88980556410752*^9}, {3.889808513638266*^9, 
+  3.889808514599799*^9}, {3.889808612661281*^9, 3.88980861637024*^9}, {
+  3.889808758077758*^9, 3.889808780342042*^9}, {3.8898088151396914`*^9, 
+  3.889808843691873*^9}},
+ CellLabel->"In[34]:=",ExpressionUUID->"ffd932f1-67ab-43e5-a779-265955bfc723"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         TemplateBox[{"\"R\"", 
+           StyleBox["\"  221\"", 
+            GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+            12., StripOnInput -> False], 
+           StyleBox["\"1\"", 
+            GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+            12., StripOnInput -> False]},
+          "Subsuperscript"],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->20.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "adfb295a-a79e-4ace-8b2c-e12b8d8a0f55"],
+      Text[
+       Style[
+        Subsuperscript["R", 
+         Style["  221", 
+          GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 12.], 
+         Style["1", 
+          GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+          12.]], 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 20.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox["\<\"=\"\>",
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->20.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "db24c9db-f20c-4a35-a096-94a2e38f72ed"],
+      Text[
+       Style["=", 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 20.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         RowBox[{"-", 
+          SuperscriptBox[
+           RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"]}],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->16,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "7dc582cf-38d6-4b6f-8f42-9e1790092d0c"],
+      Text[
+       Style[-Sin[$CellContext`\[Theta]]^2, 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+        16]]]},
+    {
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         TemplateBox[{"\"R\"", 
+           StyleBox["\"  121\"", 
+            GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+            12., StripOnInput -> False], 
+           StyleBox["\"2\"", 
+            GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+            12., StripOnInput -> False]},
+          "Subsuperscript"],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->20.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "bc914294-bb20-47d7-815b-49b52500aecb"],
+      Text[
+       Style[
+        Subsuperscript["R", 
+         Style["  121", 
+          GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 12.], 
+         Style["2", 
+          GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+          12.]], 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 20.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox["\<\"=\"\>",
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->20.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "169a3e0b-d0c1-4475-9904-8a12ee91a125"],
+      Text[
+       Style["=", 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 20.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox["1",
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->16,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "c5e5161d-a637-4c3c-9177-76c587504bc5"],
+      Text[
+       Style[1, 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 16]]]}
+   },
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[0.7]}, 
+       Offset[0.27999999999999997`]}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.8]}, 
+       Offset[0.2]}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$, TableSpacing -> {2, 1}]]]], "Output",
+ CellChangeTimes->{3.917098330395504*^9},
+ CellLabel->
+  "Out[34]//TableForm=",ExpressionUUID->"dad0fe14-9e9c-4180-86a9-\
+0a08ba3822ae"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.889808861827289*^9, 
+  3.889808890673061*^9}},ExpressionUUID->"6749c57c-ff3d-4812-8211-\
+c27fd852ecaa"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    StyleBox[
+     RowBox[{"2.", " ", "Explicit", " ", "Arguments"}],
+     FontWeight->"Bold"], 
+    StyleBox[" ",
+     FontWeight->"Bold"], 
+    StyleBox["-",
+     FontWeight->"Bold"], 
+    StyleBox[" ",
+     FontWeight->"Bold"], 
+    RowBox[{"the", " ", 
+     StyleBox["coordinates",
+      FontWeight->"Plain"], 
+     StyleBox[" ",
+      FontWeight->"Plain"], 
+     StyleBox["passed",
+      FontWeight->"Plain"], 
+     StyleBox[" ",
+      FontWeight->"Plain"], 
+     StyleBox["in",
+      FontWeight->"Plain"], 
+     StyleBox[" ",
+      FontWeight->"Plain"], 
+     StyleBox["the",
+      FontWeight->"Plain"], 
+     StyleBox[" ",
+      FontWeight->"Plain"], 
+     StyleBox["Coords",
+      FontWeight->"Plain"], 
+     StyleBox[" ",
+      FontWeight->"Plain"], 
+     StyleBox["arg",
+      FontWeight->"Plain"], 
+     StyleBox[" ",
+      FontWeight->"Plain"], 
+     StyleBox["are",
+      FontWeight->"Plain"], 
+     StyleBox[" ",
+      FontWeight->"Plain"], 
+     StyleBox["used",
+      FontWeight->"Plain"]}]}], " ", "*)"}], " ", "\[IndentingNewLine]", 
+  RowBox[{"PrettyR", "[", 
+   RowBox[{"r1", ",", " ", 
+    RowBox[{"Coords", " ", "->", " ", "coords"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{
+  3.889804265796557*^9, 3.88980538992826*^9, {3.889808893414672*^9, 
+   3.889808894109768*^9}, {3.889814587609211*^9, 3.889814609753137*^9}},
+ CellLabel->"In[35]:=",ExpressionUUID->"c0b33b21-d556-4bdc-96e8-f8108fb68bda"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         TemplateBox[{"\"R\"", 
+           StyleBox["\"  \[Phi]\[Phi]\[Theta]\"", 
+            GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+            12., StripOnInput -> False], 
+           StyleBox["\"\[Theta]\"", 
+            GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+            12., StripOnInput -> False]},
+          "Subsuperscript"],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->20.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "086cd838-a4c2-4e12-bf7e-ddb9a4890737"],
+      Text[
+       Style[
+        Subsuperscript["R", 
+         Style["  \[Phi]\[Phi]\[Theta]", 
+          GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 12.], 
+         Style["\[Theta]", 
+          GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+          12.]], 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 20.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox["\<\"=\"\>",
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->20.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "33f41432-8edf-441f-bc1a-b7620001402a"],
+      Text[
+       Style["=", 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 20.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         RowBox[{"-", 
+          SuperscriptBox[
+           RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"]}],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->16,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "02ebe45b-f4ed-48f9-9861-b12f6d053314"],
+      Text[
+       Style[-Sin[$CellContext`\[Theta]]^2, 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+        16]]]},
+    {
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox[
+         TemplateBox[{"\"R\"", 
+           StyleBox["\"  \[Theta]\[Phi]\[Theta]\"", 
+            GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+            12., StripOnInput -> False], 
+           StyleBox["\"\[Phi]\"", 
+            GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+            12., StripOnInput -> False]},
+          "Subsuperscript"],
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->20.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "8b9b53fc-e350-40ed-8abe-df88ac751113"],
+      Text[
+       Style[
+        Subsuperscript["R", 
+         Style["  \[Theta]\[Phi]\[Theta]", 
+          GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 12.], 
+         Style["\[Phi]", 
+          GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 
+          12.]], 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 20.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox["\<\"=\"\>",
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->20.,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "a8cf2dfa-1b79-4153-b794-de14bbc6dcf3"],
+      Text[
+       Style["=", 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 20.]]], 
+     InterpretationBox[Cell[BoxData[
+       FormBox[
+        StyleBox["1",
+         StripOnInput->False,
+         LineColor->GrayLevel[0],
+         FrontFaceColor->GrayLevel[0],
+         BackFaceColor->GrayLevel[0],
+         GraphicsColor->GrayLevel[0],
+         FontFamily->"American Typewriter",
+         FontSize->16,
+         FontColor->GrayLevel[0]], TextForm]], "InlineText",ExpressionUUID->
+       "ee8b657e-ab2b-4a6d-9b43-c881c5bd881b"],
+      Text[
+       Style[1, 
+        GrayLevel[0], FontFamily -> "American Typewriter", FontSize -> 16]]]}
+   },
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[0.7]}, 
+       Offset[0.27999999999999997`]}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.8]}, 
+       Offset[0.2]}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$, TableSpacing -> {2, 1}]]]], "Output",
+ CellChangeTimes->{3.91709833602183*^9},
+ CellLabel->
+  "Out[35]//TableForm=",ExpressionUUID->"13c1237c-0a4d-43c3-a8ea-\
+0b440132d6e6"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+     StyleBox[
+      RowBox[{"2.", " ", "Explicit", " ", "Arguments"}],
+      FontWeight->"Bold"], 
+     StyleBox[" ",
+      FontWeight->"Bold"], 
+     StyleBox["-",
+      FontWeight->"Bold"], 
+     StyleBox[" ",
+      FontWeight->"Bold"], 
+     StyleBox["UseSymmetry",
+      FontWeight->"Plain"]}], 
+    StyleBox[" ",
+     FontWeight->"Plain"], 
+    StyleBox["->",
+     FontWeight->"Plain"], 
+    StyleBox[" ",
+     FontWeight->"Plain"], 
+    StyleBox[
+     RowBox[{
+     "False", " ", "will", " ", "show", " ", "all", " ", "symmetries", " ", 
+      "nomally", " ", "hidden"}],
+     FontWeight->"Plain"]}], " ", "*)"}], " ", "\[IndentingNewLine]", 
+  RowBox[{"PrettyR", "[", 
+   RowBox[{"r1", ",", " ", 
+    RowBox[{"Coords", " ", "->", " ", "coords"}], ",", " ", 
+    RowBox[{"UseSymmetry", "->", "False"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8898040823789787`*^9, 3.889804085958848*^9}, {
+   3.889804129401595*^9, 3.8898041363058977`*^9}, {3.889804171094391*^9, 
+   3.889804171146892*^9}, {3.889804224416205*^9, 3.889804247120123*^9}, 
+   3.8898054015678663`*^9, {3.889808918547048*^9, 3.889808963905711*^9}},
+ CellLabel->"In[44]:=",ExpressionUUID->"c74140b1-b118-4016-a7ec-52a693d54fd9"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    StyleBox[
+     RowBox[{"2.", " ", "Explicit", " ", "Arguments"}],
+     FontWeight->"Bold"], 
+    StyleBox[" ",
+     FontWeight->"Bold"], 
+    StyleBox["-",
+     FontWeight->"Bold"], 
+    StyleBox[" ",
+     FontWeight->"Bold"], 
+    StyleBox[
+     RowBox[{"Font", " ", "Sylings", " ", 
+      RowBox[{"(", 
+       RowBox[{
+       "only", " ", "FontFamily", " ", "and", " ", "FontSize", " ", "for", 
+        " ", "now"}], ")"}]}],
+     FontWeight->"Plain"]}], " ", "*)"}], " ", "\[IndentingNewLine]", 
+  RowBox[{"PrettyR", "[", 
+   RowBox[{"r1", ",", " ", 
+    RowBox[{"Coords", " ", "->", " ", "coords"}], ",", " ", 
+    RowBox[{"UseSymmetry", "->", "False"}], ",", " ", 
+    RowBox[{"FontFamily", "->", "\"\<Rockwell\>\""}], ",", " ", 
+    RowBox[{"FontSize", "->", "28"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.889814630452177*^9, 
+  3.889814918858227*^9}},ExpressionUUID->"c99c907f-f005-44ad-a747-\
+54e8027b8494"]
+},
+WindowSize->{845, 1016},
+WindowMargins->{{Automatic, 74}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+Magnification:>0.75 Inherited,
+FrontEndVersion->"13.1 for Mac OS X ARM (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"f0e9ce5b-f957-4a85-a2ee-851d89a0f836"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 132, 2, 29, "Input",ExpressionUUID->"da7b09a7-0d58-49a6-84e1-41f87a2e8e03"],
+Cell[CellGroupData[{
+Cell[737, 28, 220, 4, 24, "Print",ExpressionUUID->"57ed2e2c-3861-4a9d-931b-f04026ed2c19"],
+Cell[960, 34, 251, 5, 24, "Print",ExpressionUUID->"f961a7c7-e2d4-4eee-91c0-3a17fbdcce93"]
+}, Open  ]]
+}, Open  ]],
+Cell[1238, 43, 196, 3, 29, "Input",ExpressionUUID->"d12cbc4e-5d6b-4cdc-9a81-2dde67725520"],
+Cell[1437, 48, 585, 17, 33, "Input",ExpressionUUID->"a80bf266-507f-40dc-bd1f-27247d23c9fa"],
+Cell[2025, 67, 211, 3, 29, "Input",ExpressionUUID->"e2d88d7f-ee6c-42f4-9ca5-436bfa900cc1"],
+Cell[2239, 72, 321, 7, 29, "Input",ExpressionUUID->"9c339974-d594-4add-88c8-5776301f4a24"],
+Cell[2563, 81, 340, 7, 29, "Input",ExpressionUUID->"fab8755a-a1df-48dc-a399-daef076ba2aa"],
+Cell[2906, 90, 197, 3, 29, "Input",ExpressionUUID->"3dbb8a6b-e630-436a-8536-80d4d01e7f7e"],
+Cell[3106, 95, 424, 7, 29, "Input",ExpressionUUID->"c9f669ba-48ae-495f-ae2a-7eb1fd9331e4"],
+Cell[CellGroupData[{
+Cell[3555, 106, 324, 6, 29, "Input",ExpressionUUID->"228fca5e-f702-48ee-a16f-d565c1dd06af"],
+Cell[3882, 114, 1171, 39, 36, "Output",ExpressionUUID->"dd45a0d9-fa17-4908-92e4-8d5b01758862"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5090, 158, 210, 3, 29, "Input",ExpressionUUID->"729115e8-764a-48b2-aedf-a466706e1706"],
+Cell[5303, 163, 2590, 73, 101, "Output",ExpressionUUID->"514ff956-ea85-4fce-9223-ccbc2c1f6f86"]
+}, Open  ]],
+Cell[7908, 239, 440, 9, 29, "Input",ExpressionUUID->"9bd45fa2-430f-4a3f-a2fc-ab1764b36ffd"],
+Cell[CellGroupData[{
+Cell[8373, 252, 887, 22, 50, "Input",ExpressionUUID->"ffd932f1-67ab-43e5-a779-265955bfc723"],
+Cell[9263, 276, 5252, 140, 93, "Output",ExpressionUUID->"dad0fe14-9e9c-4180-86a9-0a08ba3822ae"]
+}, Open  ]],
+Cell[14530, 419, 152, 3, 29, "Input",ExpressionUUID->"6749c57c-ff3d-4812-8211-c27fd852ecaa"],
+Cell[CellGroupData[{
+Cell[14707, 426, 1476, 50, 50, "Input",ExpressionUUID->"c0b33b21-d556-4bdc-96e8-f8108fb68bda"],
+Cell[16186, 478, 5347, 140, 97, "Output",ExpressionUUID->"13c1237c-0a4d-43c3-a8ea-0b440132d6e6"]
+}, Open  ]],
+Cell[21548, 621, 1270, 35, 50, "Input",ExpressionUUID->"c74140b1-b118-4016-a7ec-52a693d54fd9"],
+Cell[22821, 658, 981, 28, 50, "Input",ExpressionUUID->"c99c907f-f005-44ad-a747-54e8027b8494"]
+}
+]
+*)
+
